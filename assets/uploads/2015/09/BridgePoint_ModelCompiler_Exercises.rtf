@@ -1,0 +1,1331 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 ArialMT;\f2\fmodern\fcharset0 CourierNewPSMT;
+}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\title BridgePoint Generator - Exercises}}\margl1440\margr1440\margb1920\vieww12540\viewh16140\viewkind1
+\hyphauto1\hyphfactor90
+\deftab720
+\pard\pardeftab720\ri0\sl20
+
+\f0\fs20 \cf0 \
+\pard\pardeftab720\ri0\sl647\sb373\qc
+
+\f1\b\fs49 \cf0 BridgePoint Generator - Exercises\
+\pard\pardeftab720\ri0\sl260
+
+\f0\b0\fs20 \cf0 \'a0
+\f1\b\fs34 \
+\pard\pardeftab720\ri0\sl312\qc
+
+\fs24 \cf0 \'a0\
+\pard\pardeftab720\ri0\sl20\sb576
+\cf0 \page \pard\pardeftab720\ri0\sl20\sb576
+
+\f0\b0\fs20 \cf0 \
+\pard\pardeftab720\ri0\sl260\sb200
+\cf0 This document contains exercises to teach the user about the BridgePoint Generator and how it is used in the model compilation process for BridgePoint\'ae xtUML models.\
+\pard\pardeftab720\ri0\sl539\sb311
+
+\f1\b\fs41 \cf0 Table of Contents\
+\pard\tqr\tx9360\pardeftab720\li480\fi-480\ri0\sl260\sb207
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_GettingStarted_45_chapter"}}{\fldrslt 
+\f0\fs20 \cf0 1. Getting Started}}
+\f0\fs20 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_GettingStarted_45_chapter"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260\sb48
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_GettingStarted_45_Purpose_45_section"}}{\fldrslt 
+\b0 \cf0 Purpose and Intended Audience}}
+\b0 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_GettingStarted_45_Purpose_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li480\fi-480\ri0\sl260\sb48
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercises_45_chapter"}}{\fldrslt 
+\b \cf0 2. Exercises}}
+\b 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercises_45_chapter"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260\sb48
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise1_45_section"}}{\fldrslt 
+\b0 \cf0 Exercise 1}}
+\b0 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise1_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise2_45_section"}}{\fldrslt \cf0 Exercise 2}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise2_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise3_45_section"}}{\fldrslt \cf0 Exercise 3}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise3_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise4_45_section"}}{\fldrslt \cf0 Exercise 4}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise4_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise5_45_section"}}{\fldrslt \cf0 Exercise 5}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise5_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise6_45_section"}}{\fldrslt \cf0 Exercise 6}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise6_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise7_45_section"}}{\fldrslt \cf0 Exercise 7 and Beyond}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise7_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li480\fi-480\ri0\sl260\sb48
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Answers_45_chapter"}}{\fldrslt 
+\b \cf0 3. Exercise Answers}}
+\b 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Answers_45_chapter"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260\sb48
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise1_45_Answer_45_section"}}{\fldrslt 
+\b0 \cf0 Exercise 1 Answer}}
+\b0 	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise1_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise2_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 2 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise2_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise3_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 3 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise3_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise4_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 4 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise4_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise5_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 5 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise5_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise6_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 6 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise6_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise7_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 7 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise7_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise8_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 8 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise8_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise9_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 9 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise9_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\tqr\tx9360\pardeftab720\li960\fi-480\ri0\sl260
+{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise10_45_Answer_45_section"}}{\fldrslt \cf0 Exercise 10 Answer}}	{\field{\*\fldinst{HYPERLINK "%5Cl%20ID_Exercise10_45_Answer_45_section"}}{\fldrslt 3}}\
+\pard\pardeftab720\ri0\sl539\sb311
+
+\f1\b\fs41 \cf0 Chapter 1. Getting Started\
+\pard\pardeftab720\ri0\sl260\sb207
+
+\f0\b0\fs20 \cf0 This chapter describes the purpose and use of this document, lists other related documents, and presents the conventions used within.\
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Purpose and Intended Audience\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 This section explains the intent of this document and describes its usage.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Purpose of the Exercises\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this guide is to teach the user of EDGE and BridgePoint Generator to understand how archetype files interact with the Generator and are used to produce target code from a xtUML model. Essential tasks that this guide will enable the user to perform include the following. \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Create an archetype.\
+
+\fs16 \'95	
+\fs20 Process an archetype using EDGE.\
+
+\fs16 \'95	
+\fs20 Understand the model compiler meta-model.\
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Intended Audience\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 This guide is written for software engineers who are using the EDGE environment to create and use xtUML models and the MC-3020 model compiler. It assumes that the user is familiar with the ANSI C programming language and general usage of the development platform and its software development utilities. \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Additional Resources\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The following additional documentation will be helpful to the reader: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Object Action Language Manual (
+\f2\fs18 bpalref.pdf 
+\f0\fs20 )\
+
+\fs16 \'95	
+\fs20 Nucleus BridgePoint Modeling Suite - Design Guide (
+\f2\fs18 design.pdf
+\f0\fs20 )\
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0 \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Archetypes
+\f0\b0\fs20 \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0 An archetype is a fragment of data access and text manipulation logic that states formally how to embed an Executable UML model into text. In more specific terms, an archetype is a rule that the BridgePoint model compiler will follow to produce C, or other types of code.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Running Your Archetype\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 EDGE performs all of the code generation underneath the 
+\f2\fs18 gen
+\f0\fs20  folder in your project. In these exercises, you will create a number of archetype files. We suggest creating a new archetype for each exercise named 
+\f2\fs18 ex1.arc
+\f0\fs20 , 
+\f2\fs18 ex2.arc
+\f0\fs20 , etc... These should be saved into the folder 
+\f2\fs18 my arcs
+\f0\fs20  (or whatever you want to call it when you create it) in your project. Then copy the desired archetype to your 
+\f2\fs18 gen
+\f0\fs20  folder when you want to run it. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0 When you select 
+\f1 Build Project
+\f0  for your project, EDGE will look for an archetype (
+\f2\fs18 *.arc
+\f0\fs20 ) file in the 
+\f2\fs18 gen
+\f0\fs20  folder, if it finds one, it will load the model into the "gen database", run the archetype, and then exit without finishing the rest of the model compilation process.\
+Before proceeding, you will need to create a new xtUML project in EDGE and load a model with some data into the project. Request a sample model from your instructor if you do not already have one.\
+\pard\pardeftab720\ri0\sl539\sb311
+
+\f1\b\fs41 \cf0 Chapter 2. Exercises\
+\pard\pardeftab720\ri0\sl260\sb207
+
+\f0\b0\fs20 \cf0 This chapter presents the exercises, starting with the simplest and progressing from there.\
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 1\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Here we go! Get ready, get set, generate.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Learn how to run an archetype in EDGE.\
+
+\fs16 \'95	
+\fs20 Learn about selection and iteration.\
+
+\fs16 \'95	
+\fs20 Understand where data is kept in the gen database. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Create a report on the screen (using the 
+\i .print
+\i0  operation) that shows the names of all the classes in any model.\
+<RTR> You will first need to develop a set of objects (keyword 
+\i O_OBJ
+\i0  in the metamodel) that you can then obtain the instance name from. A 
+\i .select many
+\i0  operation will be required, as this will be a set of objects to iterate over and obtain the names. \
+After instructing the Generator to assemble a set of objects, an operation to iterate across the set and print out the names is needed. A 
+\i .for each
+\i0  operation works in much the same way that a \'93for each\'94 loop works in other languages: each item in the set (
+\i obj_set
+\i0 ) will be set as the current object (
+\i obj_inst
+\i0 ) when the loop reaches its position in the set. Keep in mind that the 
+\i obj_inst.Name
+\i0  operation should be used as a substitution variable, enclosed in curly braces in order to be interpolated correctly.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Things to consider...\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0  \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Create file 
+\f2\fs18 ex1.arc
+\f0\fs20 .\
+
+\fs16 \'95	
+\fs20 What gen database table contains these names?\
+
+\fs16 \'95	
+\fs20 The design guide section 5.1 contains useful information. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 2\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Wow, that was cool! Now, teach me the next step.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Learn how to create a file using an archetype. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Write the same report as in Exercise 1 to a disk file called 
+\f2\fs18 ex2.txt
+\f0\fs20 .\
+<RTR> This task will be very much like Exercise 1, though the list of class names will be emitted to a file instead of printed directly on the console screen. Keep in mind that the Generator stores lines of text with no beginning \'91.\'92 in a buffer that can then be directed to a file after the buffer has been filled with all the needed information.\
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 3\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Look, Ma! I can generate code.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Take what you learned in Exercise 2 and generate "real" code. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Create an archetype to define a C struct definition for the classes in any model. The struct should contain member data for each attribute, but you may assume that all attributes are of type 'int'. Output your results to ex3.c. \
+Each class is related to its attributes via R102 in the xtUML metamodel. First, select the classes in the model by using the method from the first two exercises. Using the 
+\i .Name
+\i0  property of the objects, form the C 'struct <name>' declaration for each class object.\
+Then, for each object in the set generated by the previous operation, select the attributes related to the class objects by R102. There will possibly be zero to many attributes, so a 
+\i .select many
+\i0  operation is needed.\
+Iterating across this attribute set using a 
+\i .for each
+\i0  loop, the C 'int <name>' declaration can be implemented with the 
+\i attr_inst.Name
+\i0 . \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Things to consider...\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0  \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 You know where class names are stored in the gen database. Where are attribute names stored?\
+
+\fs16 \'95	
+\fs20 How are the class names and attribute names associated in the gen database?\
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 4\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 So we've gathered some bricks. Let's start building a wall.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Take the building blocks and keep going up. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Modify the output of Exercise 3 so that it outputs each struct definition to a separate file called 
+\f2\fs18 <classname>.h
+\f0\fs20 \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Things to consider...\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0  \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 What is a substitution variable? Where can it be used? \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 5\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Up, up, up, we go.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Learn where datatypes are stored in the gen database. \
+
+\fs16 \'95	
+\fs20 Learn how to associate and use datatypes.\
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Modify the output of Exercise 4 so that the member data is declared using the data type name found across R114. Navigating this relationship for each attribute will obtain the xtUML data type class for the attribute, and the 
+\i .Name
+\i0  operator can be used to obtain the actual name of the xtUML data type. This can be done in this way:\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\i \cf0 Attr_inst->S_DT[R114].Name
+\i0 \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 6\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Man, get real! Uh...I mean float.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 What we want to accomplish\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 The purpose of this exercise is to: \
+\pard\tx200\pardeftab720\li200\fi-200\ri0\sl260\sb100
+
+\fs16 \cf0 \'95	
+\fs20 Learn how to call archetype subroutines.\
+
+\fs16 \'95	
+\fs20 Learn how to change model datatypes into C datatypes. \
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0  \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Task\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Modify the output of Exercise 5 so that the data members are declared using C compatible data types. You will need to create an archetype function to convert the datatype names in the model into the equivalent C type.\
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 7 and Beyond\
+\pard\pardeftab720\ri0\sl260\sb173
+
+\f0\b0\fs20 \cf0 Here are some advanced exercises the reader may wish to attempt to solve for additional practice. They are oriented to Java-based code.\
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Exercise 7\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Build an enumeration of constants, one for each State. Have your archetypes generate a private integer currentState variable for each each class that needs one. You should also extend your current archetype to suppress the modeled current_state attribute if you have not done so already. Select an appropriate initial value for currentState and generate code to set it. \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Exercise 8\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Generate an inner class declaration for each event accepted by a class's state machine. An instance of this inner class shall contain data members for each event data item carried by the event. \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Exercise 9\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Again, for each event, create a public method of the class that accepts the incoming event and its data items, constructs the correct instance of the inner classes created in Exercise 7, populates the data members with the values supplied as arguments to the call and enqueues the event in a suitable event queue container. \
+\pard\pardeftab720\ri0\sl374\sb216
+
+\f1\b\fs28 \cf0 Exercise 10\
+\pard\pardeftab720\ri0\sl260\sb144
+
+\f0\b0\fs20 \cf0 Create a method called procEvent that takes the next event from the event queue created in Exercise 8 and returns true if an event was processed, false if the queue was empty or the event was ignored. Make the method check the currentState.\
+\pard\pardeftab720\ri0\sl260\sb100
+\cf0 Hint: there are many ways to do this but a straightforward approach that works well in Java is to generate a nested switch. This is the approach used by MC-Java, our own internal Java model compiler. Another way is to build a two dimensional array of Function instances. This can be initialized with handler functions for Can't Happen, Ignored and functions called enter<StateName> for each state. Choose another way to do it if you like. Don't attempt to generate code for the state actions at this time. \
+\pard\pardeftab720\ri0\sl539\sb311
+
+\f1\b\fs41 \cf0 Chapter 3. Exercise Answers\
+\pard\pardeftab720\ri0\sl260\sb207
+
+\f0\b0\fs20 \cf0 This chapter presents the the answers to the exercises.\
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 1 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex1.arc\
+.//\
+.//\
+Beginning of List of Object Names\
+.select many obj_set from instances of O_OBJ\
+.for each obj_inst in obj_set\
+  .print "Object name is $\{obj_inst.Name\}\\n"\
+.end for\
+End of List of Object Names\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 2 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex2.arc\
+.//\
+.//\
+Beginning of List of Object Names\
+.select many obj_set from instances of O_OBJ\
+.for each obj_inst in obj_set\
+  Object name is $\{obj_inst.Name\}\
+.end for\
+End of List of Object Names\
+.//\
+.emit to file "ex2.txt"\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 3 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex3.arc\
+.//\
+.//\
+.select many obj_set from instances of O_OBJ\
+.for each obj_inst in obj_set\
+struct $\{obj_inst.Name\} \{\
+  .select many attr_set related by obj_inst->O_ATTR[R102]\
+  .for each attr_inst in attr_set\
+  int $\{attr_inst.Name\};\
+  .end for\
+\};\
+.end for\
+.//\
+.emit to file "ex3.c"\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 4 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex4.arc\
+.//\
+.//\
+.select many obj_set from instances of O_OBJ\
+.for each obj_inst in obj_set\
+struct $\{obj_inst.Name\} \{\
+.select many attr_set related by obj_inst->O_ATTR[R102]\
+.for each attr_inst in attr_set\
+  int $\{attr_inst.Name\};\
+.end for\
+\};\
+.//\
+.emit to file "$\{obj_inst.Name\}.h"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 5 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex5.arc\
+.//\
+.//\
+.select many obj_set from instances of O_OBJ\
+.for each obj_inst in obj_set\
+struct $\{obj_inst.Name\} \{\
+.select many attr_set related by obj_inst->O_ATTR[R102]\
+.for each attr_inst in attr_set\
+  $\{attr_inst->S_DT[R114].Name\} $\{attr_inst.Name\};\
+.end for\
+\};\
+.//\
+.emit to file "$\{obj_inst.Name\}.h"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 6 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex6.arc\
+.//\
+.//\
+.// This function retrieves a C type given  model type\
+.function lookupCType\
+.param integer coreType\
+  .assign attr_cType = ""\
+  .// The MC3020 model defines the \
+  .// following as values for "Core Data Types"\
+  .//\
+  .if ( coreType == 0 )\
+    .// 0 = void\
+    .assign attr_cType = "void"\
+  .elif ( coreType == 1 )\
+    .// 1 = boolean\
+    .assign attr_cType = "char"\
+  .elif ( coreType == 2 )\
+    .// 2 = integer\
+    .assign attr_cType = "int"\
+  .elif ( coreType == 3 )\
+    .// 3 = real\
+    .assign attr_cType = "float"\
+  .elif ( coreType == 4 )\
+    .// 4 = string\
+    .// WARNING! 100 is an arbitrary value\
+    .assign attr_cType = "char[100]"\
+  .elif ( coreType == 5 )\
+    .// 5 = integer\
+    .assign attr_cType = "int"\
+  .elif ( coreType == 6 )\
+    .// 6 = current_state\
+    .assign attr_cType = "void*"\
+  .elif ( coreType == 7 )\
+    .// 7 = same_as_base\
+    .assign attr_cType = "void*"\
+  .elif ( coreType == 8 )\
+    .// 8 = inst_ref<Object>\
+    .assign attr_cType = "void*"\
+  .elif ( coreType == 9 )\
+    .// 9 = inst_ref_set<Object>\
+    .assign attr_cType = "void*"\
+  .elif ( coreType == 10 )\
+    .// 10= inst<Event>\
+    .assign attr_cType = "void*"\
+  .elif ( coreType == 11 )\
+    .// 11= inst<Mapping>\
+    .assign attr_cType = "void*\
+  .elif ( coreType == 12 )\
+    .// 12= inst_ref<Mapping>\
+    .assign attr_cType = "void*"\
+  .else\
+    .assign attr_cType = "Error Unexpected Type ($\{coreType\})"\
+  .end if\
+.end function\
+.//\
+.// This function retrieves a C type given  model type\
+.function getCType\
+.param inst_ref dt_inst\
+  .assign attr_modelType = dt_inst.Name\
+  .assign attr_Core_Type = -1\
+  .assign attr_cType = ""\
+  .assign attr_enumData = ""\
+  .//\
+  .select one cdt related by dt_inst->S_CDT[R17]\
+  .select one udt related by dt_inst->S_UDT[R17]\
+  .select one edt related by dt_inst->S_EDT[R17]\
+  .//\
+  .if ( not_empty cdt )\
+    .assign attr_Core_Type = cdt.Core_Typ\
+    .// Call a function to get the C type from this integer value\
+    .invoke lookupResult = lookupCType(attr_Core_Type)\
+    .assign attr_cType = lookupResult.cType\
+  .elif ( not_empty udt )\
+    .// Each user data-type maps to a core data type\
+    .select one udt_cdt related by udt->S_CDT[R18]\
+    .assign attr_Core_type = udt_cdt.CoreTyp\
+    .// Call a function to get the C type from this integer value\
+    .invoke lookupResult = lookupCType(attr_Core_Type)\
+    .assign attr_cType = lookupResult.cType\
+  .elif ( not_empty edt )\
+    .// I'm taking the easy way out and assuming that the\
+    .// enum definition is made else where and so we can\
+    .// go ahead and declare this here.\
+    .// \
+    .assign attr_cType = dt_inst.Name\
+  .else\
+    .assign attr_cType = "Error! ($\{attr_cType\})"\
+  .end if\
+.end function\
+.//\
+.select many class_set from instances of O_OBJ\
+.for each class_inst in class_set\
+.// class comment followed by class name\
+/* class comment */\
+struct $\{class_inst.Name\} \{\
+  .// Now iterate over attributes\
+  .select many a_set related by class_inst->O_ATTR[R102]\
+  .for each a_inst in a_set\
+    .select one dt_inst related by a_inst->S_DT[R114]\
+    .// Call a function to get the C data type\
+    .invoke myResult = getCType(dt_inst)\
+    .// This is a class attribute (always integer)\
+  $\{myResult.cType\} $\{a_inst.Name\}; /* comment */\
+  .end for \
+  .// Below is the closing curly for the generated struct \
+\};\
+.emit to file "$\{class_inst.Name\}.c"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 7 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex7.arc\
+.//\
+.//\
+.function appendStateData\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// for each state in the state model\
+                .select any initialState related by stateModel->SM_STATE[R501]\
+                .select many states related by stateModel->SM_STATE[R501]\
+                .for each state in states\
+                        .// add a constant for this state's ID\
+        private static final int stateID_$o\{state.Name\} = $\{state.Numb\};\
+                        .//     \
+                        .// if this state's number is the lowest so far\
+                        .if (state.Numb < initialState.Numb)\
+                                .// remember this state as the one currently most likely to be the initial\
+                                .assign initialState = state\
+                        .end if\
+                .end for\
+                .//\
+                .// add an attribute for which state an instance is currently in\
+        private int currentState = stateID_$o\{initialState.Name\};\
+        .end if \
+.end function\
+.//\
+.function getImplementationTypeName\
+        .param string modelName\
+        .assign attr_name = ""\
+        .if (modelName == "boolean") \
+                .assign attr_name = modelName\
+        .elif (modelName == "unique_id") \
+                .assign attr_name = "long"\
+        .elif (modelName == "inst_ref<Mapping>") \
+                .assign attr_name = "Mapping"\
+        .elif (modelName == "inst<Event>") \
+                .assign attr_name = "Event"\
+        .elif ((modelName == "integer") or (modelName == "state<State_Model>")) \
+                .assign attr_name = "int"\
+        .end if\
+.end function\
+.//\
+.//\
+.// for each object class in the models\
+.select many objects from instances of O_OBJ\
+.for each object in objects\
+        .// output the opening of this class's declaration\
+        .assign name = "$cr\{object.Name\}"\
+class $\{name\} \
+\{\
+        .select many attributes related by object->O_ATTR[R102]\
+        .for each attribute in attributes\
+                .// if this isn't one of the attributes which we are to suppress\
+                .if (attribute.Name != "current_state")\
+                        .// if this attribute is a referential attribute\
+                        .select one referential related by attribute->O_RATTR[R106]\
+                        .if (not_empty referential)\
+                                .// use the name of the corresponding base attribute, instead\
+                                .select one attribute related by referential->O_BATTR[R113]->O_ATTR[R106]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is a user-type\
+                        .select one type related by attribute->S_DT[R114]\
+                        .select one userType related by type->S_UDT[R17]\
+                        .if (not_empty userType)\
+                                .// resolve the user-type's core-type, and use that instead\
+                                .select one type related by userType->S_CDT[R18]->S_DT[R17]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is an enumeration\
+                        .select one enumeration related by type->S_EDT[R17]\
+                        .assign typeName = type.Name\
+                        .if (not_empty enumeration)\
+                                .// treat this enumeration as a simple integer variable\
+                                .assign typeName = "integer"\
+                        .end if\
+                        .//\
+                        .// map the type's name to the name of its corresponding \
+                        .// implementation language element\
+                        .invoke result = getImplementationTypeName(typeName)\
+                        .assign typeName = result.name\
+                        .//\
+                        .// output the attribute declaration\
+        $\{typeName\} $o\{attribute.Name\};\
+                .end if\
+        .end for\
+        .//\
+        .// append the state fields\
+        \
+        .invoke stateData = appendStateData(object)\
+$\{stateData.body\}       \
+        .//\
+        .// output the closing of this class's declaration\
+\}\
+        .//\
+        .// save the generated text to a file of this class's name\
+        .emit to file "$\{name\}.java"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 8 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex8.arc\
+.//\
+.//\
+.function appendEventClasses\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .select many events related by stateModel->SM_STATE[R501]->SM_SEME[R503]->SM_SEVT[R503]->SM_EVT[R525]\
+                .for each event in events\
+                        .assign temp = "$o\{event.Mning\}"\
+                \
+        private static class $\{temp\}Event\
+        \{\
+                        .// for each data member of this event\
+                        .select many dataMembers related by event->SM_SUPDT[R520]->SM_SDI[R522]->SM_EVTDI[R522]\
+                        .for each dataMember in dataMembers\
+                                .// output a declaration for this data member\
+                                .select one type related by dataMember->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                public $\{result.name\} $\{dataMember.Name\};\
+                        .end for\
+        \}\
+                .end for\
+        .end if\
+.end function\
+.//\
+.function appendStateData\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// for each state in the state model\
+                .select any initialState related by stateModel->SM_STATE[R501]\
+                .select many states related by stateModel->SM_STATE[R501]\
+                .for each state in states\
+                        .// add a constant for this state's ID\
+        private static final int stateID_$o\{state.Name\} = $\{state.Numb\};\
+                        .//     \
+                        .// if this state's number is the lowest so far\
+                        .if (state.Numb < initialState.Numb)\
+                                .// remember this state as the one currently most likely to be the initial\
+                                .assign initialState = state\
+                        .end if\
+                .end for\
+                .//\
+                .// add an attribute for which state an instance is currently in\
+        private int currentState = stateID_$o\{initialState.Name\};\
+        .end if \
+.end function\
+.//\
+.function getImplementationTypeName\
+        .param string modelName\
+        .assign attr_name = ""\
+        .if (modelName == "boolean") \
+                .assign attr_name = modelName\
+        .elif (modelName == "unique_id") \
+                .assign attr_name = "long"\
+        .elif (modelName == "inst_ref<Mapping>") \
+                .assign attr_name = "Mapping"\
+        .elif (modelName == "inst<Event>") \
+                .assign attr_name = "Event"\
+        .elif ((modelName == "integer") or (modelName == "state<State_Model>")) \
+                .assign attr_name = "int"\
+        .end if\
+.end function\
+.//\
+.//\
+.// for each object class in the models\
+.select many objects from instances of O_OBJ\
+.for each object in objects\
+        .// output the opening of this class's declaration\
+        .assign name = "$cr\{object.Name\}"\
+class $\{name\} \
+\{\
+        .select many attributes related by object->O_ATTR[R102]\
+        .for each attribute in attributes\
+                .// if this isn't one of the attributes which we are to suppress\
+                .if (attribute.Name != "current_state")\
+                        .// if this attribute is a referential attribute\
+                        .select one referential related by attribute->O_RATTR[R106]\
+                        .if (not_empty referential)\
+                                .// use the name of the corresponding base attribute, instead\
+                                .select one attribute related by referential->O_BATTR[R113]->O_ATTR[R106]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is a user-type\
+                        .select one type related by attribute->S_DT[R114]\
+                        .select one userType related by type->S_UDT[R17]\
+                        .if (not_empty userType)\
+                                .// resolve the user-type's core-type, and use that instead\
+                                .select one type related by userType->S_CDT[R18]->S_DT[R17]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is an enumeration\
+                        .select one enumeration related by type->S_EDT[R17]\
+                        .assign typeName = type.Name\
+                        .if (not_empty enumeration)\
+                                .// treat this enumeration as a simple integer variable\
+                                .assign typeName = "integer"\
+                        .end if\
+                        .//\
+                        .// map the type's name to the name of its corresponding \
+                        .// implementation language element\
+                        .invoke result = getImplementationTypeName(typeName)\
+                        .assign typeName = result.name\
+                        .//\
+                        .// output the attribute declaration\
+        $\{typeName\} $o\{attribute.Name\};\
+                .end if\
+        .end for\
+        .//\
+        .// append the state fields\
+        \
+        .invoke stateData = appendStateData(object)\
+$\{stateData.body\}       \
+        .//\
+        .// append the event inner classes\
+        .invoke eventClasses = appendEventClasses(object)\
+$\{eventClasses.body\}    \
+\}\
+        .//\
+        .// save the generated text to a file of this class's name\
+        .emit to file "$\{name\}.java"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 9 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex9.arc\
+.//\
+.//\
+.function appendEventClasses\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// if the class's state model accepts events\
+                .select many events related by stateModel->SM_STATE[R501]->SM_SEME[R503]->SM_SEVT[R503]->SM_EVT[R525]\
+                .if (not_empty events) \
+                        .// add a queue to hold the incoming events\
+        private List events = new ArrayList();\
+                .end if \
+                .//\
+                .// for event the state model accepts\
+                .for each event in events\
+                        .// add an inner class to represent this event\
+                        .assign eventName = "$o\{event.Mning\}"\
+                \
+        private static class $\{eventName\}Event\
+        \{\
+                        .// for each field of this event\
+                        .select many fields related by event->SM_SUPDT[R520]->SM_SDI[R522]->SM_EVTDI[R522]\
+                        .for each field in fields\
+                                .// output a declaration for this field\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                public $\{result.name\} $\{field.Name\};\
+                        .end for\
+        \}\
+        \
+                        .// start to add a method to the inner class that constructs an instance of this \
+                        .// kind of event from parameters corresponding to the fields of this event\
+                        .assign method = "public void on_$\{eventName\}(";\
+                        .//\
+                        .// for each field of this event\
+                        .for each field in fields\
+                                .// add a parameter to this method that contains the data to go in this\
+                                .// field of the event\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                                .if (not_first fields) \
+                                        .assign method = method + ", "\
+                                .end if\
+                                .assign method = method + "$\{result.name\} $\{field.Name\}"\
+                        .end for\
+        $\{method\})\
+        \{\
+                $\{eventName\}Event event = new $\{eventName\}Event();\
+                        .// for each field of this event\
+                        .for each field in fields\
+                                .// set this field's value to that of the corresponding method parameter\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                event.$\{field.Name\} = $\{field.Name\};\
+                        .end for\
+                events.add(event);\
+        \}\
+                .end for\
+        .end if\
+.end function\
+.//\
+.function appendStateData\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// for each state in the state model\
+                .select any initialState related by stateModel->SM_STATE[R501]\
+                .select many states related by stateModel->SM_STATE[R501]\
+                .for each state in states\
+                        .// add a constant for this state's ID\
+        private static final int stateID_$o\{state.Name\} = $\{state.Numb\};\
+                        .//     \
+                        .// if this state's number is the lowest so far\
+                        .if (state.Numb < initialState.Numb)\
+                                .// remember this state as the one currently most likely to be the initial\
+                                .assign initialState = state\
+                        .end if\
+                .end for\
+                .//\
+                .// add an attribute for which state an instance is currently in\
+        private int currentState = stateID_$o\{initialState.Name\};\
+        .end if \
+.end function\
+.//\
+.function getImplementationTypeName\
+        .param string modelName\
+        .assign attr_name = ""\
+        .if (modelName == "boolean") \
+                .assign attr_name = modelName\
+        .elif (modelName == "unique_id") \
+                .assign attr_name = "long"\
+        .elif (modelName == "inst_ref<Mapping>") \
+                .assign attr_name = "Mapping"\
+        .elif (modelName == "inst<Event>") \
+                .assign attr_name = "Event"\
+        .elif ((modelName == "integer") or (modelName == "state<State_Model>")) \
+                .assign attr_name = "int"\
+        .end if\
+.end function\
+.//\
+.//\
+.// for each object class in the models\
+.select many objects from instances of O_OBJ\
+.for each object in objects\
+        .// output the opening of this class's declaration\
+        .assign name = "$cr\{object.Name\}"\
+class $\{name\} \
+\{\
+        .select many attributes related by object->O_ATTR[R102]\
+        .for each attribute in attributes\
+                .// if this isn't one of the attributes which we are to suppress\
+                .if (attribute.Name != "current_state")\
+                        .// if this attribute is a referential attribute\
+                        .select one referential related by attribute->O_RATTR[R106]\
+                        .if (not_empty referential)\
+                                .// use the name of the corresponding base attribute, instead\
+                                .select one attribute related by referential->O_BATTR[R113]->O_ATTR[R106]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is a user-type\
+                        .select one type related by attribute->S_DT[R114]\
+                        .select one userType related by type->S_UDT[R17]\
+                        .if (not_empty userType)\
+                                .// resolve the user-type's core-type, and use that instead\
+                                .select one type related by userType->S_CDT[R18]->S_DT[R17]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is an enumeration\
+                        .select one enumeration related by type->S_EDT[R17]\
+                        .assign typeName = type.Name\
+                        .if (not_empty enumeration)\
+                                .// treat this enumeration as a simple integer variable\
+                                .assign typeName = "integer"\
+                        .end if\
+                        .//\
+                        .// map the type's name to the name of its corresponding \
+                        .// implementation language element\
+                        .invoke result = getImplementationTypeName(typeName)\
+                        .assign typeName = result.name\
+                        .//\
+                        .// output the attribute declaration\
+        private $\{typeName\} $o\{attribute.Name\};\
+                .end if\
+        .end for\
+        .//\
+        .// append the state fields\
+        \
+        .invoke stateData = appendStateData(object)\
+$\{stateData.body\}       \
+        .//\
+        .// append the event inner classes\
+        .invoke eventClasses = appendEventClasses(object)\
+$\{eventClasses.body\}    \
+\}\
+        .//\
+        .// save the generated text to a file of this class's name\
+        .emit to file "$\{name\}.java"\
+.end for\
+  \
+\pard\pardeftab720\ri0\sl449\sb259
+
+\f1\b\fs34 \cf0 Exercise 10 Answer\
+\pard\pardeftab720\ri0\sl234\sb200
+
+\f2\b0\fs18 \cf0 \
+\pard\pardeftab720\ri0\sl234
+\cf0 .//\
+.// ex10.arc\
+.//\
+.//\
+.function appendEventProcessingMethod\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// declare the event processing method\
+        public boolean processEvent()\
+        \{\
+                if (events.isEmpty()) return false;\
+                \
+                Event event = events.remove(0);\
+                \
+                .// for each state in the state model\
+                int nextStateID = -1;\
+                switch(currentStateID) \{\
+                .select many states related by stateModel->SM_STATE[R501]\
+                .for each state in states\
+                        .// add a case statement for this state's ID\
+                        case stateID_$o\{state.Name\} :  \
+                        .//\
+                        .// for each transition out of this state\
+                        .select many transitions related by state->SM_SEME[R503]\
+                        .assign foundNewStateTrasition = false\
+                        .for each transition in transitions\
+                                .// if this transition is also a new-state-transition\
+                                .select one newStateTransition related by transition->SM_NSTXN[R504]\
+                                .if (not_empty newStateTransition)\
+                                        .// detm the next state from this transition\
+                                        .select one nextState related by newStateTransition->SM_TXN[R507]->SM_STATE[R506]\
+                                        .//\
+                                        .// detm the event that causes this transition\
+                                        .select one event related by transition->SM_SEVT[R503]->SM_EVT[R525]\
+                                        .//\
+                                        .// generate a test for executing this transition\
+                                        .assign test = "";\
+                                        .if (not foundNewStateTrasition)\
+                                                .assign foundNewStateTrasition = true\
+                                        .else\
+                                                .assign test = test + "else "\
+                                        .end if\
+                                        .assign test = test + "if (event instanceof $o\{event.Mning\}Event) nextStateID = stateID_$o\{nextState.Name\};"\
+                                $\{test\}\
+                                .end if\
+                        .end for\
+                                break;\
+                .end for\
+                \}\
+        .end if \
+                \
+                if (nextStateID != -1) currentStateID = nextStateID;\
+                return nextStateID != -1;\
+        \}\
+.end function\
+.//\
+.//\
+.function appendEventClasses\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// if the class's state model accepts events\
+                .select many events related by stateModel->SM_STATE[R501]->SM_SEME[R503]->SM_SEVT[R503]->SM_EVT[R525]\
+                .if (not_empty events) \
+                        .// add a queue to hold the incoming events\
+        private List events = new ArrayList();\
+                .end if \
+                .//\
+                .// for each event the state model accepts\
+                .for each event in events\
+                        .// add an inner class to represent this event\
+                        .assign eventName = "$o\{event.Mning\}"\
+                \
+        private static class $\{eventName\}Event extends Event\
+        \{\
+                        .// for each field of this event\
+                        .select many fields related by event->SM_SUPDT[R520]->SM_SDI[R522]->SM_EVTDI[R522]\
+                        .for each field in fields\
+                                .// output a declaration for this field\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                public $\{result.name\} $\{field.Name\};\
+                        .end for\
+        \}\
+        \
+                        .// start to add a method to the inner class that constructs an instance of this \
+                        .// kind of event from parameters corresponding to the fields of this event\
+                        .assign method = "public void on_$\{eventName\}(";\
+                        .//\
+                        .// for each field of this event\
+                        .for each field in fields\
+                                .// add a parameter to this method that contains the data to go in this\
+                                .// field of the event\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                                .if (not_first fields) \
+                                        .assign method = method + ", "\
+                                .end if\
+                                .assign method = method + "$\{result.name\} $\{field.Name\}"\
+                        .end for\
+        $\{method\})\
+        \{\
+                $\{eventName\}Event event = new $\{eventName\}Event();\
+                        .// for each field of this event\
+                        .for each field in fields\
+                                .// set this field's value to that of the corresponding method parameter\
+                                .select one type related by field->S_DT[R524]\
+                                .invoke result = getImplementationTypeName(type.Name)\
+                event.$\{field.Name\} = $\{field.Name\};\
+                        .end for\
+                events.add(event);\
+        \}\
+                .end for\
+        .end if\
+.end function\
+.//\
+.//\
+.function appendStateData\
+        .param inst_ref object\
+        .//\
+        .// if the given class has a state model\
+        .select one stateModel related by object->SM_ISM[R518]->SM_SM[R517]\
+        .if (not_empty stateModel) \
+                .// for each state in the state model\
+                .select any initialState related by stateModel->SM_STATE[R501]\
+                .select many states related by stateModel->SM_STATE[R501]\
+                .for each state in states\
+                        .// add a constant for this state's ID\
+        private static final int stateID_$o\{state.Name\} = $\{state.Numb\};\
+                        .//     \
+                        .// if this state's number is the lowest so far\
+                        .if (state.Numb < initialState.Numb)\
+                                .// remember this state as the one currently most likely to be the initial\
+                                .assign initialState = state\
+                        .end if\
+                .end for\
+                .//\
+                .// add an attribute for which state an instance is currently in\
+        private int currentStateID = stateID_$o\{initialState.Name\};\
+        .end if \
+.end function\
+.//\
+.//\
+.function getImplementationTypeName\
+        .param string modelName\
+        .assign attr_name = ""\
+        .if (modelName == "boolean") \
+                .assign attr_name = modelName\
+        .elif (modelName == "unique_id") \
+                .assign attr_name = "long"\
+        .elif (modelName == "inst_ref<Mapping>") \
+                .assign attr_name = "Mapping"\
+        .elif (modelName == "inst<Event>") \
+                .assign attr_name = "Event"\
+        .elif ((modelName == "integer") or (modelName == "state<State_Model>")) \
+                .assign attr_name = "int"\
+        .end if\
+.end function\
+.//\
+.//\
+.// for each object class in the models\
+.select many objects from instances of O_OBJ\
+.for each object in objects\
+        .// output the opening of this class's declaration\
+        .assign name = "$cr\{object.Name\}"\
+class $\{name\} \
+\{\
+        .select many attributes related by object->O_ATTR[R102]\
+        .for each attribute in attributes\
+                .// if this isn't one of the attributes which we are to suppress\
+                .if (attribute.Name != "current_state")\
+                        .// if this attribute is a referential attribute\
+                        .select one referential related by attribute->O_RATTR[R106]\
+                        .if (not_empty referential)\
+                                .// use the name of the corresponding base attribute, instead\
+                                .select one attribute related by referential->O_BATTR[R113]->O_ATTR[R106]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is a user-type\
+                        .select one type related by attribute->S_DT[R114]\
+                        .select one userType related by type->S_UDT[R17]\
+                        .if (not_empty userType)\
+                                .// resolve the user-type's core-type, and use that instead\
+                                .select one type related by userType->S_CDT[R18]->S_DT[R17]\
+                        .end if\
+                        .//\
+                        .// if this attribute's data-type is an enumeration\
+                        .select one enumeration related by type->S_EDT[R17]\
+                        .assign typeName = type.Name\
+                        .if (not_empty enumeration)\
+                                .// treat this enumeration as a simple integer variable\
+                                .assign typeName = "integer"\
+                        .end if\
+                        .//\
+                        .// map the type's name to the name of its corresponding \
+                        .// implementation language element\
+                        .invoke result = getImplementationTypeName(typeName)\
+                        .assign typeName = result.name\
+                        .//\
+                        .// output the attribute declaration\
+        private $\{typeName\} $o\{attribute.Name\};\
+                .end if\
+        .end for\
+        .//\
+        .// append the state fields\
+        \
+        .invoke stateData = appendStateData(object)\
+$\{stateData.body\}       \
+        .//\
+        .// append the event inner classes\
+        .invoke eventClasses = appendEventClasses(object)\
+$\{eventClasses.body\}    \
+        .//\
+        .// append the event processing method\
+        .invoke method = appendEventProcessingMethod(object)\
+$\{method.body\}  \
+\}\
+        .//\
+        .// save the generated text to a file of this class's name\
+        .emit to file "$\{name\}.java"\
+.end for\
+  \
+}

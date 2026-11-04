@@ -1,0 +1,36 @@
+title: xtUML
+description: Open source executable and translatable UML modeling.
+url: https://xtuml.github.io
+baseurl: /xtuml_org
+lang: en
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: articles
+    values:
+      layout: article
+      permalink: /articles/:basename/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - tools
+  - doc
+  - vendor
+  - README.md
+  - LICENSE
+  - .gitignore
+
+sass:
+  style: compressed

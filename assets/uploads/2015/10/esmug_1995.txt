@@ -1,0 +1,2725 @@
+'archive.9511'
+
+--
+
+
+From: "Ed Wegner (8438)" <EDW@teleng1.tait.co.nz>
+Subject: Any BridgePoint users out there?
+--------------------------------------------------------------------
+If you are a real user of BridgePoint, i.e. your experience with the
+toolset is not associated with Project Technologies or Objective
+Spectrun, and you've used BridgePoint to capture the requirements of
+a real system you were involved in developming, I'd love to hear from you.
+
+We have been using Shlaer-Mellor OOA for problem domain analysis (no RD
+stuff so far) for about 2 years on a few relatively small, low-risk
+projects.  We like the method, and see the obvious benefits of having
+a toolset that understands the semantics of the modelling constructs,
+can check them, simulate them, and test them.  We're about to embark
+on a larger project whose application and service domains we are
+planning on re-using on many subsequent products.  We would like a
+tool that supports our needs, and now P-T is pushing BridgePoint.
+We're going to get an evaluation copy, but I haven't been able to
+find anyone else who has actually used the tool.  If this is you,
+then:
+1. How closely does it follow P-T's OOA constructs?
+2. How much training IN THE USE OF THE TOOL (as opposed to OOA)
+would you recommend?  What was your experience w.r.t. training estimates
+vs. real training needs?
+3. How stable has it been?  (i.e. lots of updates..., lots of
+bugs..., platform problems..., problems in integrating w/ other
+tools..., etc.)
+4. Have you used any other OOA/D CASE tools (Teamwork, Rose)?
+If so, how does BridgePoint compare with them?
+5. Have you been able to measure any productivity gains?  If you
+don't have hard measures, anecdotal info and gut feel will do.
+6. Ultimately, would you recommend this toolset?
+
+We're currently only looking at the Model Builder and Verifier.  Our
+immediate priority is to capture requirements and test them.
+But if you have any experience with theCode  Generator and any purchased
+or hand-built software architectures, I would appreciate info on
+your experiences with those, as well.
+
+Ed Wegner
+Software/Digital Technology Group Leader
+Tait Electronics Ltd
+558 Wairakei Road, PO Box 1645
+Christchurch
+New Zealand
+
+
+'archive.9512'
+
+--
+
+From: macotten@techsoft.com (MACOTTEN)
+Subject: Type Packages vs. Encapsulated Types
+----------------------------------------------------------------
+   I have seen some developers place Ada "TYPE PACKAGES" within
+   the Software Architecture Domain of their system. Yet, it
+   would seem more graceful to place data types and similar
+   structures within each package pertaining to the particular
+   object; thereby preventing the use of a global, unhidden
+   structure.
+
+   Can anyone defend the point: It would be advantageous to
+   place data structures in a common type definition package
+   rather than encapsulate the types used by each object within
+   the respective packages?
+
+
+From: Ken Wood <kenwood@ti.com>
+Subject: Re: Type Packages vs. Encapsulated Types
+----------------------------------------------------------------
+
+>   Can anyone defend the point: It would be advantageous to
+>   place data structures in a common type definition package
+>   rather than encapsulate the types used by each object within
+>   the respective packages?
+>
+
+Its a matter of philosophy. For example, take a simple thing like
+temperature. One could define the TYPE and various operations for 
+temperature
+in a "common" place. Then object A, which collects temperature information,
+could use the type in declaring its internal, private data. object B,
+which performs some analysis, could then ask Object A for the temperature
+at some given time. Object B and object A "share" knowledge of what
+a temperature is because the type is common to both. Note: A and B don't
+have to be aware of the DETAILS of how temperature is defined, they just
+both declare variables to be of type TEMPERATURE, and use the operations
+defined in the package where TEMPERATURE is defined. But of course Ada 
+doesn't
+hide the details...
+
+However, you COULD force temperature type to be hidden in, say object A.
+That forces you, however, to encapsulate INTO A operations that object
+B needs, because Object B doesn't know what temperature is. Most people
+don't like to put some of B's operations inside A just because they
+hid the data.
+
+So my approach is to make common and public types that make sense
+for multiple objects to share, and hide the rest. Or, there is
+no ONE best answer, you have to combine approaches as best fits
+the problem.
+
+-Ken Wood
+
+---------------------------------------------------
+Quando omni flunkus moriati
+
+
+From: "Wells John" <Wells.John@mail.ndhm.gtegsc.com>
+Subject: RE: Type Packages vs. Encapsulated Types
+----------------------------------------------------------------
+More philosophy.  These are comments on Ken Wood's statement:
+
+> So my approach is to make common and public types that make sense
+> for multiple objects to share, and hide the rest. Or, there is no ONE
+> best answer, you have to combine approaches as best fits the problem.
+
+When you bury this kind of details into stuff outside the method, you end 
+up
+with a lot of code that can not be generated automatically by a translator.
+Therefore, I would always model the data structures as objects.
+
+The Software Architecture's archetypes can cause these objects to be 
+generated
+as either common types or encapsulate types as makes sense for the 
+particular
+case.  The advantage being: you can easily change from one to the other
+without major modeling changes.  The disadvantage being:  the models and
+translator may be more complex.
+
+John Wells
+
+
+From: Doyt.L.Perry@att.com
+Subject: From A BridgePoint User
+----------------------------------------------------------------
+Responding to Ed Wegner's mail, we have used BridgePoint tools from the 
+point
+they became available (at the time from Objective Spectrum).  Over the 
+years we
+have also used competing tools from Cadre and SES.  Of the BridgePoint 
+tools,
+we have extensively used
+
+	- the Model Builder
+	- the Generator
+
+but NOT the Verifier (see *** below)
+
+In response to Ed's questions:
+
+
+
+1. How closely does it follow P-T's OOA constructs?
+
+In our opinion the tool closely supports PT's constructs for Info Modeling
+and State Modeling - the strength of the Objective Spectrum developers is 
+that
+they are practitioners of OOA/RD and actually used the Shlaer-Mellor 
+approach
+to develop their tools; consequently they have a good understanding of the
+approach and that is reflected in their close support for PT constructs.
+
+For process modeling, BridgePoint uses an action language rather than 
+ADFDs;
+however, while different in form, the language pretty much focuses 
+analysis on
+the same issues and level of detail as ADFDS.
+
+
+
+2. How much training IN THE USE OF THE TOOL (as opposed to OOA)
+would you recommend?  What was your experience w.r.t. training estimates
+vs. real training needs?
+
+We did minimal training on the tool; it's pretty intuitive and our users 
+take
+to it quickly.  What has worked for us is for one person to become a "tool
+expert" and they then convey that knowledge to other tool users (via a 
+brief
+demo and then serving as a consultant).
+
+Note that our users all were knowledgeable of the method before taking up 
+the
+tool
+
+
+3. How stable has it been?  (i.e. lots of updates..., lots of
+bugs..., platform problems..., problems in integrating w/ other
+tools..., etc.)
+
+We have used BridgePoint tools for a long time and are pleased with their
+quality; they have been (compared to other case tools) simple to install 
+and
+maintain.  Major releases have resulted in bugs and fixes as expected but
+Objective Spectrum has been responsive with their support.  There have been
+quite a number of releases - on the good side, that has brought useful 
+features
+into our hands; on the down side, a new release can be disruptive when it
+entails underlying object database schema changes.
+
+
+
+4. Have you used any other OOA/D CASE tools (Teamwork, Rose)?
+If so, how does BridgePoint compare with them?
+
+Our experience with CASE tools is primarily with tools supporting
+Shlaer-Mellor. The BridgePoint Model Builder is in our opinion far 
+superior to
+the capture tools provided by Cadre and SES.  Its a more modern interface 
+and
+much more supportive (e.g. formalizing relationships at your command) than 
+the
+others.
+
+As I said before, the Objective Spectrum developers were savvy users of the
+method and it shows in their tools (compared to Cadre and SES developers 
+who
+rarely, if at all, used the method).
+
+I think the SES simulation capability is much more sophisticated than the
+Verifier (following from the SES core competency in simulation).  Neither 
+Cadre
+or SES has the grasp of RD that I would like to see, and I strongly feel 
+that
+the Generator is the best support for Design by Translation of the three
+vendors.
+
+
+
+5. Have you been able to measure any productivity gains?  If you
+don't have hard measures, anecdotal info and gut feel will do.
+
+
+We all feel more productive using the BridgePoint tools than we were using
+either Cadre or SES tools.  I think that is due the stronger support 
+tedious
+tasks, for propagation entry and change throughout the model, etc.  We 
+don't
+have any numbers though.
+
+In any case, most of our productivity gains come from the RD process and 
+the
+reuse it supports, rather than from the tool.
+
+
+6. Ultimately, would you recommend this toolset?
+
+Well, I guess that's evident from the positive nature of my response.  We 
+like
+the BridgePoint tools - granted they can be improved, but we would not have
+been able to achieve what we have with Shlaer-Mellor if we had continued 
+to use
+the Cadre or SES tools.
+
+
+*** By the time the Verifier was available, we had developed a couple of
+architectures on our own; rather than simulate, we use existing archetypes 
+to
+generate code from a model and then shake down the model that way.  In the
+past, we have also converted models to SES and used their simulation.
+
+Doyt Perry
+AT&T Bell Laboratories
+doyt.perry@att.com
+
+From: Sanjiv Gossain <sgoss@ctp.com>
+Subject: Shlaer-Mellor case tools on PC/Windows platforms
+--------------------------------------------------------------------------
+
+Does anyone know of any CASE tools that support Shlaer/Mellor
+and run on MSWindows?
+
+--sanjiv gossain
+
+_______________________________________________________
+Sanjiv Gossain  <sgoss@ctp.com>
+Cambridge Technology Partners  <http://www.ctp.com>
+Eton House, 18-24 Paradise Road, Richmond, TW9 1SE, England
+Tel: +44.181.334.2767 /  Fax: +44.181.334.2701
+304 Vassar Street, Cambridge, MA 02139, USA
+Tel: +1.617.374.8667 / Fax: +1.617.374.8300
+
+
+
+From: Howie Meyerson <HMEYERSO@ventritex.com>
+Subject:  Re: Shlaer-Mellor case tools on PC/Windows platforms
+----------------------------------------------------------------
+Sanjiv,
+
+
+
+We just finished a benchmarking process.  Because we have lots of PC's 
+here,
+a Windows app would have been great.  Unfortunately, the PC tools are 
+limited
+for this method.  Popkin's System Architect and Protosoft's Paradigm-Plus
+provide the ability to draw the diagrams and perform some queries, but
+neither is tuned to the method.  Paradigm-Plus is probably the better tool,
+but I can recommend neither for serious users.  Stick with the UNIX tools
+(Bridgepoint, Intelligent OOA, ObjectBench) and use an XTerminal on your 
+PC.
+
+
+
+Howie.
+
+
+
+P.S. I'll be happy to give you some tech. pointers offline.
+
+
+
+From: Todd Lainhart <todd@atria.com>
+Subject: Re: Shlaer-Mellor case tools on PC/Windows platforms
+--------------------------------------------------------------------------
+
+
+
+   Does anyone know of any CASE tools that support Shlaer/Mellor
+   and run on MSWindows?
+
+   --sanjiv gossain
+
+System Architect kinda/sorta supports PTOOA.  The good news is that you can
+modify the data dictionary significantly to support whatever variant you 
+are
+comfortable.  The bad news is that it takes a bit of time to feel 
+comfortable
+doing that, and getting to know the report writer/data extraction 
+language.  I
+wouldn't go so far as to say that you could translate and generate code
+efficiently, though...
+
+    -- Todd
+
+From: Doyt.L.Perry@att.com
+Subject: Test Case Generation
+--------------------------------------------------------------------------
+
+I received mail from someone investigating Shlaer-Mellor; they ask:
+
+	Can you automatically generate test cases with the Shlaer-Mellor
+	tools?
+
+My response was that there was no explicit facility in the BridgePoint 
+tools
+for generating test cases, but that in principle, one should be able, at 
+least
+in part to generate tests using the ideas of translation.  We have no
+experience with such test generation.
+
+How would you respond?
+
+Doyt Perry
+AT&T Bell Laboratories
+
+From: Katherine.A.Lato@att.com
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+>	Can you automatically generate test cases with the Shlaer-Mellor
+>	tools?
+
+You can generate all kinds of things using BridgePoint,
+but don't forget that you have to put the information in before you
+can get it out.  You can generate customer documentation, requirements
+tracing or test scripts by setting up the appropriate templates to
+extract the information from the analysis (if you've put it into the
+analysis.)  The neat thing is that you can put the information in with
+objects in a way that makes the most sense for analysis purposes, then
+using Bridgepoint can get it out in the format you need.
+
+Katherine Lato
+AT&T Bell Laboratories
+
+From: Ken Wood <kenwood@ti.com>
+Subject: COde generation question
+--------------------------------------------------------------------------
+
+We used Shlaer-Mellor for our OOA, and wrote
+custom scripts to extract information and
+generate Ada code from the CASE tool we are
+using (not Bridgepoint...).
+
+The code was "real code" not code frames where
+you had lots of blanks to fill in. Does anyone
+have any experience with the code generation
+facilities of Bridgepoint or any other case
+tool? I'm curious to know how much real, ready
+to compile and execute code you can get versus
+simple code frames that are "skeletons" on which
+you hang all your hand written code.
+
+Dr. Ken Wood
+Texas Instruments
+
+---------------------------------------------------
+Quando omni flunkus moriati
+
+
+From: "Wells John" <Wells.John@mail.ndhm.gtegsc.com>
+Subject: RE: COde generation question
+--------------------------------------------------------------------------
+
+While we are still in the process of finishing our translator, we will get
+100% translation from our Cadre database.  We placed design and coloring
+information into the database.  As a short cut, design and coloring
+information was specified in C++ where it would simplify the translator.
+
+We colored the attributes and event data items with the C++ type to 
+declare.
+We are doing process modeling and given that conditional data flows are not
+used (no place to store the C++) and conditional control flows have the
+condition coded in C++ (only place Cadre gives us), all of the processes
+except for the transformation processes and searches can be generated
+automatically based on the models.  The transformation processes are 
+colored
+with their C++ statements and their function declaration is automatically
+generated.  Searches are colored with the C++ expression to select the
+instance and the rest of the function is automatically generated.
+
+If we continue with Cadre, we will eventually replace the C++ code with a
+design language.  However, it has been suggested that we switch to
+BridgePoint.
+
+
+From: gary.marcos@csb.varian.com (Gary Marcos)
+Subject: RE: Code Generation
+--------------------------------------------------------------------------
+
+BridgePoint is THE tool for code generation.
+
+Prior to adopting BridgePoint, we experienced the horrors of Cadre 
+Teamwork.
+Models were mapped to code by hand.  Manual mapping is a laborious, error 
+prone,
+and time consuming process.
+We switched to BridgePoint and automated the mapping of Information and 
+State
+Models to C++ (with the state actions specified in C++).
+
+We are currently nearing completion of our second translator using 
+BridgePoint.
+This version allows analysts to specify actions in ASL (Action Syntax 
+Language).
+
+Gary Marcos
+
+From: dirk@sybase.com (Dirk Epperson)
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+Doyt Berry writes:
+>
+> I received mail from someone investigating Shlaer-Mellor; they ask:
+>
+> 	Can you automatically generate test cases with the Shlaer-Mellor
+> 	tools?
+>
+> My response was that there was no explicit facility in the BridgePoint 
+tools
+> for generating test cases, but that in principle, one should be able, at 
+least
+> in part to generate tests using the ideas of translation.  We have no
+> experience with such test generation.
+>
+> How would you respond?
+>
+> Doyt Perry
+> AT&T Bell Laboratories
+>
+We have used the Bridgepoint tool to generate a number of things for which
+it was not originally intended. Examples:
+	- Documentation in troff format
+	- Conversions to SQL for reverse engineering of ER diagrams
+	(customers sometimes understand these better than OOA models)
+
+Also, since the tool "knows" each function point, we have explored the
+possibility of generating test *plans*. Presumably it is a relatively
+small step to generate test code, as well.
+
+Note, it is often important for the types of items above to control the
+*order* in which things are happening - a very difficult task for the
+tool as it stands. An ORDER BY clause in the tool would go a long way.
+PT response??
+
+--Dirk Epperson
+Sybase
+
+
+From: wajda@tellabs.com
+Subject: DSET Integration question
+--------------------------------------------------------------------------
+
+We're looking at the possibility of using Shlaer-Mellor to develop some
+new systems and one of the building blocks we're investigating using is
+the DSET agent toolkit.  Does anyone have any experience integrating a
+DSET agent into a system developed using Shlaer-Mellor? Any information
+how easy or hard it would be to do this would be very helpful.  Thanx.
+
+--rich
+
+--
+Rich Wajda <wajda@tellabs.com> : Tellabs Operations, Inc. : (708) 512-8387
+  ----------------------------------------------------------------------
+  "My opinions are my own.  That anyone should share them is remarkable.
+         That anyone should do so deliberately, is frightening."
+
+
+From: gary.marcos@csb.varian.com (Gary Marcos)
+Subject: Re: DSET Integration question
+--------------------------------------------------------------------------
+
+What is DSET agent toolkit?
+
+Gary Marcos
+
+From: krs@bbt.com (Keith R. Schomburg)
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+> From: Doyt.L.Perry@att.com
+> Subject: Test Case Generation
+>
+> I received mail from someone investigating Shlaer-Mellor; they ask:
+>
+> 	Can you automatically generate test cases with the Shlaer-Mellor
+> 	tools?
+>
+> My response was that there was no explicit facility in the BridgePoint 
+tools
+> for generating test cases, but that in principle, one should be able, at 
+least
+> in part to generate tests using the ideas of translation.  We have no
+> experience with such test generation.
+>
+> How would you respond?
+>
+> Doyt Perry
+> AT&T Bell Laboratories
+>
+
+Using BridgePoint, you can do something along the following lines:
+
+(1) add an active object to your model in which each state performs
+    a particular test case.
+
+(2) Add a parse keyword in your object description such as
+
+	TEST_CASE_OBJECT:TRUE
+
+    At translation time you can look for this keyword and if it is found
+    and is set to TRUE do some special translation as described in step
+    4 below.
+
+(3) Model the state model such that each state recieves a single event
+    and has no transitions to any other state.  The action language for
+    the state executes your particular test case against the particular
+    subsystem or domain it is contained within.
+
+                   +---------+
+	ev1 -----> | state 1 | (test case 1)
+                   +---------+
+
+                   +---------+
+	ev2 -----> | state 2 | (test case 2)
+                   +---------+
+
+                   +---------+
+	ev3 -----> | state 3 | (test case 3)
+                   +---------+
+
+(4) At translation time, for all objects with the TEST_CASE_OBJECT parse
+    key word set to TRUE, generate a fully connected state model in which
+    any event recieved in any state causes a valid transition to the
+    appropriate state as indicated by the actual state model.  (e.g. ev1
+    always causes a transition to state 1, ev2 always causes a transition
+    to state 2, ...).
+
+
+Keith Schomburg
+BroadBand Technologies
+
+
+
+From: zazen!thor!gboyd@bones.attmail.com (Gerry Boyd(457-2465) 53C41 thor)
+Subject: Re: COde generation question
+--------------------------------------------------------------------------
+
+---> [SNIP]
+---> Does anyone
+---> have any experience with the code generation
+---> facilities of Bridgepoint or any other case
+---> tool?
+---> [SNIP]
+---> Dr. Ken Wood
+---> Texas Instruments
+We (AT&T/CCS) have developed a code generator that generates 100%
+of our application by extracting models from CADRE Teamwork and
+translating via Recursive Design. We've been generating C++ for
+a real business application in production.  Our generator version
+1.0 was operational around January 1994 and has undergone numerous
+improvements since then (without having to change the analysis
+models much.)
+
+One of the major issues in "translation as a way to develop software"
+seems to be in the debate between process models and action languages.
+We went down the path of developing an action language (after much
+debate, hand-wringing, and anguish). It seems to have been a viable
+choice but the lack of a standard action language may be having
+a dampening effect on aceptance of Shaler-Mellor. CADRE has one,
+SES has one, BridgePoint has one, we have one...Arrrgh! If there's
+a finite taxonomy of process types, SM ought to publish a standard.
+Or are we to assume that the language of BridgePoint is the defacto
+standard?
+
+Gerry Boyd
+AT&T
+
+
+From: Juan.M.Roa@att.com
+Subject: RE: Code Generation
+--------------------------------------------------------------------------
+
+
+Gary,
+
+We are also working in creating a compiler that can translate actions
+in a formal language (BridgePoint's and/or our own...) and I got
+curious about what kind of technology are you using for your
+translator... is it the fragment generation facilities provided by
+BridgePoint or some other method? Is ASL your own defined language or is it
+BridgePoint's?
+
+
+	Juna Roa
+	Compass Project, AT&T
+
+
+
+From: gary.marcos@csb.varian.com (Gary Marcos)
+Subject: RE: Code Generation
+--------------------------------------------------------------------------
+
+>
+>
+> Gary,
+>
+> We are also working in creating a compiler that can translate actions
+> in a formal language (BridgePoint's and/or our own...) and I got
+> curious about what kind of technology are you using for your
+> translator... is it the fragment generation facilities provided by
+> BridgePoint or some other method? Is ASL your own defined language or is 
+it
+> BridgePoint's?
+>
+>
+> 	Juna Roa
+> 	Compass Project, AT&T
+>
+>
+>
+
+Juna,
+
+We are using the fragment generation facilities as provided by BridgePoint.
+ASL as defined by BridgePoint.
+We purchased a beta version of fragment archetypes from PT to improve our
+time to market situation.
+
+Curious as to why you decided to create your own compiler?
+
+Gary Marcos
+
+From: "Monroe, Jon                 DA" 
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+
+krs@bbt.com (Keith R. Schomburg) writes:
+
+>  Doyt.L.Perry@att.com writes:
+
+>:  I received mail from someone investigating Shlaer-Mellor; they ask:
+
+>:       Can you automatically generate test cases with the Shlaer-Mellor
+>:       tools?
+
+>:  My response was that there was no explicit facility in the BridgePoint
+>:  tools for generating test cases, but that in principle, one should be
+>:  able, at least in part to generate tests using the ideas of 
+translation.
+>:  We have no experience with such test generation.
+
+>:  How would you respond?
+
+
+>  Using BridgePoint, you can do something along the following lines:
+
+>  (1) add an active object to your model in which each state performs
+>      a particular test case.
+
+>  (2) Add a parse keyword in your object description such as
+
+>         TEST_CASE_OBJECT:TRUE
+
+>      At translation time you can look for this keyword and if it is found
+>      and is set to TRUE do some special translation as described in step
+>      4 below.
+
+>  (3) Model the state model such that each state recieves a single event
+>      and has no transitions to any other state.  The action language for
+>      the state executes your particular test case against the particular
+>      subsystem or domain it is contained within.
+
+>                     +---------+
+>          ev1 -----> | state 1 | (test case 1)
+>                     +---------+
+
+>                     +---------+
+>          ev2 -----> | state 2 | (test case 2)
+>                     +---------+
+
+>                     +---------+
+>          ev3 -----> | state 3 | (test case 3)
+>                     +---------+
+
+>  (4) At translation time, for all objects with the TEST_CASE_OBJECT parse
+>      key word set to TRUE, generate a fully connected state model in 
+which
+>      any event recieved in any state causes a valid transition to the
+>      appropriate state as indicated by the actual state model.  (e.g. ev1
+>      always causes a transition to state 1, ev2 always causes a 
+transition
+>      to state 2, ...).
+
+
+I believe Mr. Perry's question can be broken down to two parts:
+
+  1.  Can you you translate test cases that you've developed in OOA into
+      source code, and
+  2.  Can you use the tool to automatically develop your test cases in OOA
+      (based on the structure of your models or some other criteria)
+
+Mr. Schomburg shows in his reply that, yes, you can translate
+STD stubs and drivers into source code just like the regular models.
+He even shows how you can extend translation so that it actually adds to
+the driver, in this case turning what is effectively several single-state
+STD's into one large fully connected state model.  Clever technique for
+reducing driver complexity.  So, the answer to #1 is "absolutely".
+
+As for the second question, the answer is not so simple.  In another post,
+I gave an example of generating (partial) test cases to achieve thread
+of control coverage.  I think there is a lot of opportunity here for
+development.  Conventional testing techniques for data flow, state,
+and data domain testing would apply to the OOA models.  Therefore,
+existing algorithms for automated test case generation based on these
+testing techniques should apply as well.
+
+I'm not aware of any commercially available "analysis analyzers" yet.
+So, the answer to #2 is both "yes" and "no".  You can't buy this capability
+off the shelf, but today's tools are so flexible and capable that you can
+most certainly roll your own.
+
+Jon Monroe
+
+This post does not represent the official position, or statement by,
+Abbott Laboratories.  Views expressed are those of the writer only.
+
+
+
+
+
+
+From: "Monroe, Jon                 DA" 
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+"Doyt Perry x7810 1B-353 (nq8230600)" <dlp@cbsignal.cb.att.com> writes:
+
+> I received mail from someone investigating Shlaer-Mellor; they ask:
+
+>        Can you automatically generate test cases with the Shlaer-Mellor
+>        tools?
+
+> My response was that there was no explicit facility in the BridgePoint 
+tools
+> for generating test cases, but that in principle, one should be able, at
+> least in part to generate tests using the ideas of translation.  We have 
+no
+> experience with such test generation.
+
+> How would you respond?
+
+With SES/objectbench, it is possible to do some automatic test case
+generation to achieve coverage of the threads of control (TOC) for a 
+domain.
+This is accomplished as follows:
+
+   1. "color" the event list (by using the Properties field) so that events
+       which qualify as "unsolicited events from external entities" are 
+       specially marked.  These are the events which can begin a thread of
+       control.
+   2.  Customize your action translator so that it identifies all 
+determinant
+       attributes.  This is a matter of detecting the event generators 
+which
+       are executed as a result of some conditional logic involving
+       attribute values.
+   3.  Write a query script which determines values for the determinant
+       attributes such that each conditional predicate can be forced to
+       true and false.
+   4.  Write a query script which, for each unsolicited event and each
+       combination of determinant attributes values identified in step 3,
+       generates a simulator RTI file to initialize the test execution
+       scenario.
+
+This technique has (at least) the following limitations:
+
+   1.  It doesn't determine how many instances of each object are required
+       at the start of the test.
+   2.  It creates many more test cases than are actually required, since
+       there may be alot of overlap in TOC coverage if all combinations of
+       determinant attribute values are used.
+
+Both of these limitations can be overcome by manually editing the generated
+test cases.  I'm sure it is possible to do this automatically as well (by
+having the tool analyze the TOC), but it would take alot more effort.
+
+Jon Monroe
+
+This post does not represent the official position, or statement by,
+Abbott Laboratories.  Views expressed are those of the writer only.
+
+
+
+
+
+
+
+From: "Monroe, Jon                 DA" 
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+
+Ken Wood <kenwood@ti.com> writes:
+
+> ... Does anyone
+> have any experience with the code generation
+> facilities of Bridgepoint or any other case
+> tool? I'm curious to know how much real, ready
+> to compile and execute code you can get versus
+> simple code frames that are "skeletons" on which
+> you hang all your hand written code.
+
+When I evaluated CASE tools earlier this year, my #1 priority was support
+for 100% code generation.  SES/objectbench 2.1 was selected, and I must say
+that the tool has exceeded my expectations in this area.  We do not, and
+will not, modify or manually supplement code generated for domains on which
+we apply OOA.
+
+Jon Monroe
+
+This post does not represent the official position, or statement by,
+Abbott Laboratories.  Views expressed are those of the writer only.
+
+
+
+
+
+From: Doyt.L.Perry@att.com
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+I wanted to respond to Ken Woods inquery about experiences of BridgePoint 
+users
+with code generation.
+
+I too work for AT&T (working with previous respondent Juan Roa) but in
+different organization than Gerry Boyd (who has responded to this thread 
+also).
+ We have had good success in generating "real code" using BridgePoint 
+tools.
+
+I am often not sure what people mean when they say 100% code generation - 
+does
+that mean:
+	a) all of the product they produce was generated
+	b) they did not have to manually complete or modify what they
+	   generated
+
+We expect to generate 75% of the product we produce - what we generate is 
+ready
+to compile C++ or C.  But some of the remaining 25% consists of reusable
+mechanisms that we wrote manually one-time and are employing in multiple
+products.
+
+Gerry Boyd has put his finger on an important issue regarding the lack of a
+standard action language; let me add to Gerry's "Arrrgh!" by pointing out 
+that
+we (elsewhere in AT&T) ALSO developed our own action language (although we 
+are
+now migrating to BridgePoint's language).
+
+We are anxious to know where Project Technology is going on this issue -
+
+	- will the classic ADFD continue to be promoted as the standard
+	  process modeling approach?
+	- will the BridgePoint action language emerge as the S-M standard?
+	- will Project Technology nurture both forms?
+
+Along those lines, I would like to know how other Shlaer-Mellor users are
+carrying out process modeling?
+
+	- ADFDs?
+	- action language of a tool?
+	- action language of their own definition?
+	- programming language (e.g. C++)
+
+Doyt Perry
+AT&T Bell Labs
+
+From: Steve Mellor <steve@projtech.com>
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+Doyt Perry wrote:
+
+>I am often not sure what people mean when they say 100% code generation - 
+does
+>that mean:
+>	a) all of the product they produce was generated
+>	b) they did not have to manually complete or modify what they
+>	   generated
+
+I think we need two words: one for (a) and one for (b).
+However, we should restrict (b) somehow to exclude code-frame
+generation.  That is, I wouldn't want to hear that XX, Inc.
+generates 100% of the headers for C files, then -you- write the
+code to make it work.  Any ideas on definitions or terms?
+
+>Gerry Boyd has put his finger on an important issue regarding the lack of 
+a
+>standard action language; let me add to Gerry's "Arrrgh!" by pointing out 
+that
+>we (elsewhere in AT&T) ALSO developed our own action language (although 
+we are
+>now migrating to BridgePoint's language).
+>
+>We are anxious to know where Project Technology is going on this issue -
+>
+>	- will the classic ADFD continue to be promoted as the standard
+>	  process modeling approach?
+>	- will the BridgePoint action language emerge as the S-M standard?
+>	- will Project Technology nurture both forms?
+
+Let _me_ add to Gerry's "Arrrrgh!" also.
+
+We plan to make a statement on these matters in the
+VERY near future.  That statement will include
+a definition of an action language (not necc. BPs),
+and a statement on the role of ADFDs, and "Yes."
+
+We understand the importance of this. (Hence the Arrrrgh!)
+We recognize that we need to make a statement.  We're
+working on it as fast as we can.  Please give us a few
+more weeks.  Thanks.
+
+-- steve mellor
+
+
+From: gary.marcos@csb.varian.com (Gary Marcos)
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+
+> Doyt Perry wrote:
+>
+> >I am often not sure what people mean when they say 100% code generation 
+- does
+> >that mean:
+> >	a) all of the product they produce was generated
+> >	b) they did not have to manually complete or modify what they
+> >	   generated
+>
+
+Steve Mellor wrote:
+>
+> I think we need two words: one for (a) and one for (b).
+> However, we should restrict (b) somehow to exclude code-frame
+> generation.  That is, I wouldn't want to hear that XX, Inc.
+> generates 100% of the headers for C files, then -you- write the
+> code to make it work.  Any ideas on definitions or terms?
+>
+
+(a) as stated above, seems unlikely given that many domains will have one 
+or
+more complex transformation processes specified in implementation language.
+Although I am sure that there is at least one masochist out there 
+somewhere who
+has written a Discrete Fourier Transform in ASL.
+
+On this project we will achieve 100% code generation from domains modelled 
+using
+OOA where 100% of the actions are specified in ASL.  We allow complex 
+transforms
+to be specified in C, with several restrictions.  I expect that MUCH less 
+than
+5% of the processing will be specified in implementation language.
+
+Has anyone generated an entire system without writing a single line of
+implementation code (architectural mechanisms excepted)?
+
+Gary Marcos
+
+From: tront@cs.sfu.ca
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+I teach the Shlaer-Mellor methodology in a 3rd year university information
+systems design course.  When talking to (I think it was) Ralph Hibbs at 
+Project
+Technology 6 months ago, he asked if I would write down some interesting 
+code
+generation and other CASE requirements I needed.  Sorry it took me so 
+long, but
+here are three:
+
+1) The ability to do I/O from the action language.  The ObjectBench CASE 
+tool
+provides this from its C based action language.  It allows a state to 
+printf()
+a prompt, and scanf() a reply from the user on the console.  This allows 
+fairly
+sophisticated menu applications to be generated, even if they are not
+graphical.  e.g.
+	Main Menu:
+	1) FileOps
+	2) MaintenanceOps
+	3) Exit
+	Enter your choice:
+Unfortunately, most other CASE tools are totally lacking in the obvious 
+hard
+requirement that the generated executing code be able to interact with an
+actual user or a file system.  i.e. their code generation and simulation 
+tools
+are for prototyping the central algorithm and control of some sophisticated
+multi-threaded application (which is cool!), but not fully generating 
+something
+useful that will communicate with the rest of the world.  On the other 
+hand,
+besides the practicality of needing I/O, I love my students being able to 
+SEE
+BOTH very important parts of their program simultaneously: the UI, and
+Objectbench's animation of the message passing (i.e. the 'architecture'
+operating.  It is a pity that programmers pay so little attention to
+architecture, but seeing the difference between the UI operating and the
+architecture operating helps).
+
+2) Speaking of interacting with the file system, one has to be able to 
+read and
+write data to a file.  Many applications (not necessarily just information
+systems) need persistence.  The methodology is great for information 
+systems as
+it concentrates on value-based keys (just like ER diagrams for DBMSs 
+do).   
+Again, because Objectbench uses C as its action language, you can do 
+regular C
+file I/O.  Unfortunately that is more awkward than it needs to be because 
+you
+have to tell an object to save itself, as opposed to just 
+declaring/coloring it
+persistant and have it treated as a record in a database.  Especially for 
+my
+student's applications, we would just like a CASE tool which if during
+simulation an instance is created, then you exit the system, it will still 
+be
+there the next morning.  What is terrible ironic about ObjectBench is that 
+it
+now has a very sophisticated (though slightly buggy) OODBMS underneath it 
+to
+act as the design repository, but that an application being simulated 
+cannot
+create and delete persistant objects!
+
+3) I have found that the concept of a 'use case scenario' provides a very
+powerful design synthesis paradigm.  A scenario is the thread of events 
+that
+snake through an OCM in response to a particular unsolicited external 
+event.
+(Scenarios infect a project: they are named in the requirements spec, then
+documented from the user's point of view in the draft user manual, then
+architected as above, then are tested in the test phase of a project).
+
+I personally feel that the OCM should be draw before the state diagrams.  
+And
+additionally, that the way to methodically 'synthesize' the OCM is to draw
+'single scenario' OCMs for each unsolicited external event.  The total OCM 
+is
+then just the 'union' of all these single scenario OCMs.  The requirements 
+for
+each object (in the form of an exported event list) is then just a second
+'union' of all the message arrows going into a particular object.  This 
+way,
+you do not create more states and events than is necessary for an object to
+satisfy it's requirements.
+The essence of this third point is that CASE tools should support the 
+concept
+of a single scenario OCM, and the process of doing the first and second 
+unions
+(without throwing away the raw single scenario OCMs; i.e. the unions are 
+just
+complex views).  Currently, my students must draw these single scenario 
+OCMs,
+augment them with descriptive pseudo-code (which belong in no specific 
+object)
+describing the logical flow of the scenario, and take the unions 
+themselves.
+
+Notes:
+i) Scenarios can snake through more than one subsystem.  On a single 
+scenario
+OCM, all that is needed is the subset of all objects in the system that
+participate in that scenario.  You could just choose these from a scrolling
+list and put only the relevant object state models from the various 
+subsystems
+on a single scenario OCM.  You could tell which subsystem a state model 
+icon is
+from in such a global OCM if some subsystem id adorned it.
+ii) Since a single scenario OCM is much less complex than the system OCM, 
+it is
+nice to superimpose a single scenario Object Access Model (OAM).  This 
+allows
+the reader of the text or pseudo-code description of the logical flow of 
+the
+scenario to follow it, especially if the message and access arrows are 
+numbered
+in some time-mannered way.
+
+iii)  Considerable architectural design can be done at the single scenario 
+OCM  
+stage in deciding which objects are going to be able to call the I/O 
+library
+(keep scope small for portability), and whether the scenarios will be
+controlled centrally, or in a distributed manner along the thread.  This 
+whole
+technique really helps convince students that there is something concrete 
+to
+'architectural design'.
+
+
+Questions:
+
+-Have any of you seen this 'union' synthesis proposed or properly written 
+up
+before?
+
+-If so where?  If not, should publish a paper on it (any journal 
+suggestions)?
+
+-Is this union in any CASE tool for any methodology you know of?
+
+-If not, do you know of any tool (even MacDraw) that takes the unions of
+connected graphs?
+-We are overloading Objectbench with 10 users on 10 Sun Workstations 
+operating
+off a single Sun server.  Code generating builds take 30 minutes as we 
+don't
+have the 16 MB of RAM per client recommended IN THE SERVER, and the server 
+thus
+thrashes.  This may be because either one or both of ObjectBench and its 
+OODBMS
+do lots of disk caching in RAM.  Does anyone else have experience with this
+many simulteneous users (on ObjectBench or other tools)?  Do any other
+Shlaer/Mellor CASE tools perform better with this many users?
+
+Thanks for the ear.
+
+Russ Tront, Instructor
+School of Computing Science
+Simon Fraser University
+Burnaby, B.C.  V5A 1S6
+CANADA
+phone: (604)291-4310
+fax:   (604)291-3045
+email: tront@cs.sfu.ca
+
+From: tront@cs.sfu.ca
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+Sorry to do this but in my last message, the second question should read:
+-If so where?  If not, I should publish a paper on it (any journal
+suggestions)?
+
+I had missed out the "I", and since I would like to publish these ideas if 
+they
+are previously unpublished, I thought I should clarify.
+
+Sorry about this maillist noise.
+
+Russ Tront, Instructor
+School of Computing Science
+Simon Fraser University
+Burnaby, B.C.  V5A 1S6
+CANADA
+phone: (604)291-4310
+fax:   (604)291-3045
+email: tront@cs.sfu.ca
+
+
+
+From: "Monroe, Jon                 DA" 
+Subject: Tracking Bridges
+--------------------------------------------------------------------------
+
+
+Has anyone found a good way to specify and maintain bridges?  Do you rely
+primarily on events sent to terminators in the client domain, which map 1 
+- 1
+to events received in the service domain?  Or do you use more sophisticated
+bridges, which map attribute to attribute, attribute value to instance,
+process to event, etc?
+
+Last I heard, none of the available tools support any mapping other than
+the event-to-terminator and (possibly) some predefined processes.  I see 
+Mr.
+Mellor mention in comp.object that the mappings between domains can be 
+easily
+determined (and maintained?) by "half-way decent tools".  What is the state
+of bridge support in tools today?
+
+Jon Monroe
+
+This post does not represent the official position, or statement by,
+Abbott Laboratories.  Views expressed are those of the writer only.
+
+
+
+From: "Marc J. Balcer" <mbalcer@projtech.com>
+Subject: Re: Test Case Generation
+--------------------------------------------------------------------------
+
+Doyt Perry posed the question about automatically
+generating test cases from the OOA models.  I believe it
+can be done quite easily.
+
+Several years ago when I was at Siemens I published a
+paper entitled "Automatic Test Case Generation from
+Formal Test Specifications."  It described an approach I
+called the Category-Partition Method.  In short, the tester
+defined a set of input conditions (the categories) and a set
+of typical values for each condition (the partition).  A tester
+could also establish dependencies among the categories (for
+example, reestricting the values for one category based upon
+the choice of a value for another category).
+
+How does this apply to OOA?  In the OOA course, we say to
+"establish the values of all current state and determinant
+attributes" for all of the instances participating in a test.
+Also, we note that outward-bound events may result in one of
+several solicited events.  Finally the whole test is kicked off
+by an unsolicited event.
+
+I can readily see how the category-partition method could be
+applied to OOA:  each determinant/current state attribute
+is a category, each solicited event is a category.  The values of
+these categories would be derived from their domains of legal
+values:  for current state attributes it's just the set of states!
+A potentially difficult job is to establish the dependencies
+(e.g. if the Disk is in the state "Disk in Drive" then the
+drive must be in the state "Occupied by Disk" and the slot
+must be "Waiting for Disk to Return from Drive").
+
+We would, of course, need to deal with issues such as how to
+account for multiple instances, but I believe that it is
+quite possible to generate test cases based upon some of the
+elements in the OOA models.
+
+Marc J. Balcer
+Project Technology
+mbalcer@projtech.com
+
+
+From: Juan.M.Roa@att.com
+Subject: RE: Code Generation
+--------------------------------------------------------------------------
+
+Gary,
+
+Don't get too excited about my use of the word "compiler"... the tool I
+referred to translates Action specification into a compilable language
+such as C or C++ and is based in a standard compiler-making product 
+(MetaTool).
+
+The reason we decided to look into this (in parallel to trying to use
+BP facilities...) was that there seems to be a set of features defined
+in the BP language that are not supported by the parser built into the
+modeling tool (for instance support for compound test conditions  or
+the where clause among others). The lack of support for these features 
+forces
+our analysts to use only a subset of the language and create actions that
+are less readable than they should. The ability to cleanly translate the
+action may also be compromised because the action is typically written with
+redundant logic because of the tool limitations. I would expect that other
+organizations writing actions in the BP language are experiencing similar
+problems...
+
+This and some other little things made us decide to look into developing
+a translator using MetaTool. This effort is still going on and we expect to
+have a working prototype hopefullysometime early next year if we can 
+maintain
+some resources allocated to it.
+
+	Juan Roa
+        AT&T Bell Labs
+
+
+> Juna,
+>
+> We are using the fragment generation facilities as provided by 
+BridgePoint.
+> ASL as defined by BridgePoint.
+> We purchased a beta version of fragment archetypes from PT to improve our
+> time to market situation.
+>
+> Curious as to why you decided to create your own compiler?
+>
+> Gary Marcos
+>
+
+From: Ken Wood <kenwood@ti.com>
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+
+>>I am often not sure what people mean when they say 100% code generation 
+- does
+>>that mean:
+>>	a) all of the product they produce was generated
+>>	b) they did not have to manually complete or modify what they
+>>	   generated
+
+I think of 100% as this:
+  a.) carefully, methodically, enter the analysis into the CASE tool.
+  b.) define the architecture
+  c.) press a button - out comes code.
+
+Of course, this requires that the lowest levels be written in an
+"action languge" or some other mechanism to define the details, so
+people are still writing code. But the big boost is that they are
+writing "code" that truly can be re-used because you can change
+the architecture, re-turn the crank, and have new code.
+
+To me, if the CASE tool allows you to point to reusable library code plus 
+it can
+generate code based on the architecture definition and the action language,
+that also qualifies as 100% code generation.
+
+For many places, 50-75% generation of code that consitutes the end product
+is a real productivity improvement even with the remaining portions
+written "by hand." But 100% is great!
+
+---------------------------------------------------
+Quando omni flunkus moriati
+
+
+From: Gary_Fatt-CPGR49@email.mot.com
+Subject: RE: Code Generation
+--------------------------------------------------------------------------
+
+
+Juna,
+
+We have not been using Bridgepoint for OOA so I can't comment on the
+usefulness of the tool for code generation. We plan on trying it out next
+year. For the existing project, the translator was built/implemented by one
+of the team members, hence it was custom to this project. It would have 
+been
+better to have a more generic translator to use for ongoing development.
+
+Gary
+________________________________________________________
+To: shlaer-mellor-users@projtech.com@INTERNET
+From: shlaer-mellor-users@projtech.com@INTERNET on Thu, Dec 7, 1995 6:46 PM
+Subject: RE: Code Generation
+
+Original-From: jroa@cbsignal.cb.att.com
+Precedence: bulk
+
+
+Gary,
+
+We are also working in creating a compiler that can translate actions
+in a formal language (BridgePoint's and/or our own...) and I got
+curious about what kind of technology are you using for your
+translator... is it the fragment generation facilities provided by
+BridgePoint or some other method? Is ASL your own defined language or is it
+BridgePoint's?
+
+
+	Juna Roa
+	Compass Project, AT&T
+
+
+
+From: "Carl Kugler" <carlk@lfs.loral.com>
+Subject: Re: Code Generation
+--------------------------------------------------------------------------
+
+On Dec 9,  3:13pm, tront@cs.sfu.ca wrote:
+>
+> 3) I have found that the concept of a 'use case scenario' provides a very
+> powerful design synthesis paradigm.  A scenario is the thread of events 
+that
+> snake through an OCM in response to a particular unsolicited external 
+event.
+> (Scenarios infect a project: they are named in the requirements spec, 
+then
+> documented from the user's point of view in the draft user manual, then
+> architected as above, then are tested in the test phase of a project).
+>
+....
+>
+> Questions:
+>
+> -Have any of you seen this 'union' synthesis proposed or properly 
+written up
+> before?
+>
+>-- End of excerpt from tront@cs.sfu.ca
+
+You might want to look at "Constructing Operational Specifications", in Dr.
+Dobb's Journal, June 1995.  It describes a method designed to be a front
+end to methodologies such as OOA.  The Coats-Mellon Operational 
+Specification
+(CMOS) method uses 6 steps to develop a set of diagrams that specify 
+incoming
+stimuli and a system's response to those stimuli.  I think it might have 
+some
+similarities to your method.
+
+Carl Kugler
+
+
+From: nick@ultratech.com (Nick Dodge)
+Subject: ADFD's vs. Action Language
+--------------------------------------------------------------------------
+
+In practice I have found ADFD's difficult to maintain and often
+aparently more complex than the actual code they represent. The
+lack of an OR construct for data flows can make constructing
+a model of a logically simple function somewhat difficult. An
+advantage of ADFD's is that arbitrary execution order is not (over)
+specified. This may make the mapping of an OOA to a multi-processor
+architecture easier.
+
+In my opinion, an action language is easier to use and faster to
+document. If the action language followed the syntax of the C
+programming language, with extensions for OOA such as Find,
+for each, generate etc, then the learning curve would be accelerated.
+
+Of course, the ease and effectiveness of both the above methods is
+a function of the tool being used.
+
+
+Nick Dodge, Consultant
+Orangutan Software & Systems
+P.O. Box 1048
+Coulterville, CA 95311
+(209)878-3169
+
+From: "Vock, Mike                  DA" 
+Subject: RE: ADFD's vs. Action Language
+--------------------------------------------------------------------------
+
+I agree, in principle, with the action language vs ADFD reasoning in Nick's
+e-mail and would like to comment on the action language vs programming
+language statement.
+
+> If the action language followed the syntax of the C
+> programming language, with extensions for OOA such as Find,
+> for each, generate etc, then the learning curve would be accelerated.
+
+The reason I have heard for having an action language is that action
+language is not programming language specific, making it easier to 
+translate
+to _any_ programming language.
+
+Well, what are you doing when you're writing action language? You're
+programming. So action language is a programming language.
+
+Nick makes a good point, because I think we can also translate C/C++ or any
+other programming language just as easy as action language. Maybe easier if
+we put logical limits on language usage (e.g. no pointer de-referencing).
+
+Having said that, I can think of two arguments for keeping a generic action
+language:
+1. Not all projects use C or whatever language would be used as the action
+   language.
+2. An action language doesn't support all the constructs of a normal
+   programming language. Therefore, an analyst is constrained to think in 
+the
+   terms of the OOA, not an elaborate programming language.
+
+Does PT have a breakdown of the programming languages being translated to 
+by
+users of the method?
+
+Mike Vock
+Abbott Laboratories
+vockm@ema.abbott.com
+
+These comments do not reflect the attitudes or opinions of Abbott
+Laboratories and are strictly those of the author.
+
+
+
+
+
+From: nick@ultratech.com (Nick Dodge)
+Subject: Action Language
+--------------------------------------------------------------------------
+
+My earlier suggestion for an action language that used C language
+syntax evoked an interesting response from Mike Vock. I did not
+mean to imply that the action language be a superset of C, but
+simply that it follow C syntax while allowing for OOA constructs
+that are not part of the C language
+
+The reasoning for this is not to have the analyst thinking in terms
+of an elaborate language, but to simplify his/her life by not
+forcing the use of a new language that is unlikely to be used
+anywhere else. A generic language does not appear to have any
+advantage in translation, where an action language that follows
+a syntax in widespread use is preferable to those who are
+already familiar with that language.
+
+While not all Shlaer-Mellor practitioners are developing applications
+in C or C++, it is safe to assume that at the current time, these
+target languages are far more widespread than any action language.
+Based on my informal and admittedly unscientific survey, C & C++
+have been by far the most common languages used.
+
+Nick Dodge, Consultant
+Orangutan Software & Systems
+P.O. Box 1048
+Coulterville, CA 95311
+(209)878-3169
+
+
+From: Ken Wood <kenwood@ti.com>
+Subject: Re: Action Language
+--------------------------------------------------------------------------
+
+
+>While not all Shlaer-Mellor practitioners are developing applications
+>in C or C++, it is safe to assume that at the current time, these
+>target languages are far more widespread than any action language.
+>Based on my informal and admittedly unscientific survey, C & C++
+>have been by far the most common languages used.
+
+I bet that most applications ARE in C or C++. But there are those of us
+doing applications in Ada that might not desire an action language
+that is like C, and there are probably COBOL users who'd rather not
+have an action language like C.
+
+To me, a good analysis is as APPLICATION PROGRAMMING language free as 
+possible.
+Then you can concentrate on WHAT the system has to do. The architecture
+then defines the mapping to the application programming language, i.e.
+C++, Ada, COBOL, etc. To that end, I see a benefit in having the
+action language be a language of its own, not a psuedo-version of
+some existing language such as C or Ada.
+
+One of the hardest problems we have with analysts who've been writing
+code for years is to think just in terms of WHAT the system does, not
+how to implement it. Otherwise, you get people trying to do pointers
+to arrays of records of etc... etc... etc... while they are still just
+trying to describe what the system does.
+
+But, I'll admit, for most people I've worked with, ANY action language
+is easier to work with than ADFDs, and easier to translate into code...
+
+---------------------------------------------------
+Quando omni flunkus moriati
+And of course, opinions are my own, not my employer's...
+
+
+From: pryals@projtech.com (Phil Ryals)
+Subject: RE: ADFD's vs. Action Language
+--------------------------------------------------------------------------
+
+Mike Vock wrote:
+>Does PT have a breakdown of the programming languages being translated to 
+by
+>users of the method?
+
+We have no official count, but my sense of it is that C++ leads the pack,
+followed by C and Ada in some order, with very few "other" languages.
+
+Phil Ryals
+Customer Support Manager
+
+
+
+From: "denise (d.l.) lloyd" <denise@bnr.ca>
+Subject:  BP Action Language
+--------------------------------------------------------------------------
+
+All this talk of the "Action Language following the syntax of C" (or any
+other programming language) concerns me.  The action language is not 
+intended
+to be a replacement for any programming language, as a matter of fact, it
+is and should remain, very high level and especially, language independent.
+If it does not, much of the power of the Shlaer-Mellor method is 
+immediately
+lost.
+
+I agree that there are some frustating limitations with the BridgePoint
+action language but I'm very much in favor of "forcing" the analysis to be 
+as
+clean and direct as possible.  Besides, some of these limitations (and 
+reduced
+effeciency), can be offset by tweaking the architecture.
+
+At the risk of sounding preachy, if you look at real-time embedded software
+development projects and their wide spectrum of skill (or lack of) levels, 
+you
+might see the beauty of not providing enough rope to hang with.   I for one
+would rather live with the limitations in favor of simple, robust, 
+automatically
+generated code, in whatever language.
+
+I think PT has a plan in place to add new action language primatives and I
+hope that they do so very cautiously so that this language retains all of
+the positive characteristics that it has now.  Given their track record, 
+I'm
+sure they will.
+
+
+Denise Lloyd
+Bell Northern Research
+Research Triangle Park, NC
+
+
+
+From: Starr Leon <starr@modelint.com>
+Subject: Re: BP Action Language
+--------------------------------------------------------------------------
+
+Here, here!
+
+(In response to Denise Lloyd's comment)
+
+     - Leon
+--
+----------------------------------------------------------------
+     M O D E L   I N T E G R A T I O N
+     Shlaer-Mellor Object Oriented Analysis
+     Leon Starr          starr@modelint.com
+     (415) 863-8649      FAX: (800) 714-4352
+----------------------------------------------------------------
+
+From: macotten@techsoft.com (MACOTTEN)
+Subject: Re: ADFD's vs. Action Language
+--------------------------------------------------------------------------
+
+   These comments are provided in response to the ADFD vs.
+   Action Language topic presented by Nick earlier today.
+
+ > In practice I have found ADFD's difficult to maintain and often
+ > aparently more complex than the actual code they represent.
+
+ Having dealt with both ADFDs and Pseudo code or Archetypes
+ directly derived from the STDs, I find the ADFDs to be a more
+ graceful and engineered approach.
+
+ > The lack of an OR construct for data flows can make
+ > constructing a model of a logically simple function somewhat
+ > difficult.
+
+ We have not met with this difficulty in our limited experience with
+ the method, yet I could see that an OR construct may be helpful in
+ certain cases.
+
+ > An advantage of ADFD's is that arbitrary execution order is not
+ > (over) specified. This may make the mapping of an OOA to a
+ > multi-processor architecture easier.
+
+ This is important to note due to the original target type systems of
+ the method. Real-time applications must support this sort of
+ distributed processing and S-M OOA supports this concept well.
+
+ > In my opinion, an action language is easier to use and faster to
+ > document. If the action language followed the syntax of the C
+ > programming language, with extensions for OOA such as Find,
+ > for each, generate etc, then the learning curve would be accelerated.
+
+ Believe it or not, not everyone uses C. That's right. I have managed to 
+use it
+
+ quite sparingly during my career. Some regular, more strictly defined 
+grammar
+ for Psuedo code may be an answer, but not Psuedo-C.
+
+ In fact if we would derive a common regular grammar (subset of English) 
+that
+ was used to present the documentation of the system and using a method 
+like
+ OOA, we could make spec., design, and implementation much more easily
+ understood. We might even be able to write standards to that end and get
+ official recognition as Engineers of Software (P.E.).
+
+ Matthew A. Cotten, Systems Engineer
+ TECHSOFT (Technical Software Services), Inc.
+ Pensacola, FL 32571
+ (904) 469-0086
+
+ This is the opinion of an individual and in no way represents the official
+ opinion of TECHSOFT, Inc. or any of its other employees.
+
+
+From: "Vock, Mike                  DA" 
+Subject: RE:BP Action Language
+--------------------------------------------------------------------------
+
+I think we are all saying the same thing as Denise, albeit using different
+words.
+
+I think Nick's whole point was that the action language must provide some
+kind of language constructs, so why not follow the basic rules of a 
+language
+widely used by developers?
+
+My basic point was you can do that, so long as you don't let the more
+"elaborate" capabilities of the language sneak into the action language.
+
+So, I agree with Denise and I think Nick does also.
+
+Although, speaking of preachy, I would never apply the term "simple" to
+translation. Translation has its own inherent complexities. Especially when
+your implementation environment is more than one isolated, single-threaded
+CPU. The beauty of translation is that you can have _one_ small team (if 
+you
+can afford it) dedicating to solving this potentially complex problem
+robustly and uniformly.
+
+As we all know, someone almost always pays the price of simplicity.
+
+Mike Vock
+Abbott Labs
+
+
+From: "Vock, Mike                  DA" 
+Subject: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+Is everyone using OODLE diagrams for capturing their Architecture design? 
+If
+so, what means are you using to document the design? If not, how are you
+designing your Architecture?
+
+We used OODLE on a "pilot project" via VISIO (Windows-based drawing tool)
+extended with OODLE templates, because we could find no automated tools for
+OODLE. This proved to be a maintenance problem for us.
+
+For our product development, we are going to use Rational Rose 3.0 and a 
+form
+of Booch Lite (GASP...SHOCK...HORROR...BLASPHEMY), because maintenance and
+design documentation generation will be a heckuva lot easier. Besides, in
+essence, OODLE and Booch Lite are not that far apart.
+
+Opinions?
+
+Mike Vock
+Abbott Labs
+
+
+
+
+From: glenfu@mdhost.cse.TEK.COM
+Subject: Methodology and Toolset Experiences
+--------------------------------------------------------------------------
+
+
+We are investigating both the methodology and BridgePoint
+toolset.  I would like to know if some of you experienced users
+out there could offer some words of wisdom?
+
+Specifically:
+
+1) Has using the methodology / tools shown tangible results?
+2) Has anyone done the comparison versus other methodology
+   and tools?
+3) What are some of the problems that you encountered when
+   coming up to speed with the methodology and tools?
+
+
+I am very interested in talking to experienced users.  If you can't
+broadcast in this forum, e-mail me and let me know if I can give
+you a call.
+
+Thanks,
+
+Glen Fujimori
+
+======================================================================
+  Glen T. Fujimori                  internet: Glen.T.Fujimori@TEK.COM
+  IBU Software Engineering                      Voice: (503) 627-1336
+  Tektronix, Inc.                                 FAX: (503) 627-5548
+  PO Box 500, M/S 39-732                   Voice Mail: (503) 423-3053
+  Beaverton, OR 97077-0001
+======================================================================
+
+
+
+From: "Wells John" <Wells.John@mail.ndhm.gtegsc.com>
+Subject: RE: Tracking Bridges
+--------------------------------------------------------------------------
+
+Jon Monroe wrote:
+> Has anyone found a good way to specify and maintain bridges?
+
+A while back, I was wishful thinking and speculated that a bridge really
+should have its own modeling as part of the method that is neither in the
+client or server domains.  This would allow data to be declared 
+(information
+model) and actions be performed for each bridge event and process (either
+action language or process model).  The actions would have full access to
+objects and processes in either domain.
+
+Now our projects more practical solution.  I won't go so far as to claim 
+the
+following is good, but it does allow automatic translation from our Cadre
+database.  Please note that we are doing process models instead of action
+language so I don't know how useful this is when your using action 
+languages.
+
+We created a text note at the domain level, which contained the bridge 
+mapping
+for all bridge processes and event generations from the clients.  This note
+allowed clients bridge event to be mapped into a server event to be sent or
+C++ source code.  A client bridge process has the same options.  The 
+mapping
+to events allowed C++ to be specified in the argument positions (allowing
+mappings of event data items though functions or tables).
+
+The following examples should help make things clearer:
+
+// Map bridge event BK1000 to process code to set the accounts owner.
+EVENT BK1000(AccountNumber, Owner)
+{
+  BKIAccount *instance;
+
+  // Search for instance using process IAcnt50 and set the owner with
+  // process IAcnt60.
+  BKIAccount::ProcessIAcnt50(AccountNumber, instance);
+  instance->ProcessIAcnt60(Owner);
+};
+
+// Map the bridge event BK1005 to the IAcntReq1 creation event.
+EVENT BK1005(AccountNumber, Owner)
+=IAcntReq1(Owner, AccountNumber);
+
+// Map bridge process BK.1 to the IAcntReq1 creation event.
+PROCESS BK.1(AccountNumber, Owner)
+=IAcntReq1(Owner, AccountNumber);
+
+// Map bridge process BK.1 to process code to set the accounts owner.
+PROCESS BK.2(AccountNumber, Owner)
+{
+  BKIAccount *instance;
+
+  // Search for instance using process IAcnt50 and set the owner
+  // with process IAcnt60.
+  BKIAccount::ProcessIAcnt50(AccountNumber, instance);
+  instance->ProcessIAcnt60(Owner);
+};
+
+The translator performs macro substitution and places the code into the
+clients action function (a proven mistake I fought against and lost).
+
+
+From: "Anderson Wade" <wanderson@mailbag.com>
+Subject: RD Book
+--------------------------------------------------------------------------
+
+The Technical Report by Rodney C. Montrose mentions a RD book,
+when is this set to be published?
+
+From: bnm@bbt.com (Brian N. Miller)
+Subject: Re: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+
+"Vock, Mike DA" <VockM@addlcp02.addlc.msmail.abbott.com> wrote:
+
+| How are you designing your Architecture?
+
+For me its presently direct implementation without modelling, but not 
+without regret.
+
+In article <NEWTNews.817930131.2368.steve@sallys.projtech.com>,
+steve@projtech.com recently wrote in comp.object:
+
+|The Software Architecture domain like any other, hence we model
+|it using OOA.
+
+I agree that modelling the architecture is proper.  On my project my fellow
+architects are skeptical that the architecture can be automatically 
+generated
+from its model, and so there is reluctance to model it at all.
+
+So my question is:  Is the architecture necessarily a hand coded product?
+I've not been able to dispel this notion.
+
+If it can't be generated, then for modelling this domain, much of 
+Shlaer-Mellor's
+merit is lost.  In which case I would agree with you, Mike Vock, that
+an elaborative method such as Booch becomes attractive.  I would still be 
+inclined
+to model the architecture with Shlaer-Mellor solely for its simulation 
+capabilities.
+The architecture shouldn't have to wait for its deliverable form in order 
+to
+be validated.
+
+
+From: "Vock, Mike                  DA" 
+Subject: Re: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+First, thanks to Brian Miller for the response. I'm relieved to read others
+are struggling with this issue, also. Apparently I'm not missing some 
+hidden
+pearl of wisdom.
+
+Brian Miller, quoting Steve Mellor:
+> |The Software Architecture domain like any other, hence we model
+> |it using OOA.
+
+A point I left out of my original posting was that we did an OOA of our
+Architecture also. In review of the models, the team agreed this was not 
+the
+best way to maintain our mechanisms. An OODLE or Booch Lite notation gave 
+us
+the power and flexibility to model such things as abstract base classes,
+virtual methods, polymorphic methods, etc. - key elements in an 
+Architecture.
+
+If PT uses OOA to model their Architecture, do they maintain their 
+mechanisms
+in the OOA? From past experience using PT to consult on Architecture and UI
+Domain analysis issues, when they say OOA an Architecture or UI Domain they
+mean information modelling only.
+
+>From Brian again:
+> For me its presently direct implementation without modelling, but not
+> without regret.
+
+At Abbott, we develop instruments under FDA regulatory scrutiny, so we must
+generate design documentation and show trace between requirements, design,
+and code. Hence, the selection of Rational Rose in an attempt to automate
+Architecture development.
+
+Rational uses what they call "Round-Trip Engineering" to support 100% code
+generation from Booch models. It basically works like this:
+  1. Model
+  2. Generate headers and source frames
+  3. Add in the "guts" of the source frames
+  4. Reverse engineer back into models, from which you can re-generate your
+     code without affecting the code you hand-crafted
+The big issue is can we effectively use Rational Rose to keep our models 
+and
+code synched? If we can, we have 100% code maintenance from within our
+Architecture design models.
+
+Sorry for this heresy. If you never hear from me again, you'll know why.
+
+Regards,
+Mike Vock
+Abbott Labs
+
+
+
+
+From: "Ralph L. Hibbs" <ralph@projtech.com>
+Subject: Re: RD Book
+--------------------------------------------------------------------------
+
+At 08:29 AM 12/18/95 +0000, you wrote:
+>The Technical Report by Rodney C. Montrose mentions a RD book,
+>when is this set to be published?
+>
+>
+
+Sally and Steve are aggressively working on the RD book.  Their process
+involves research, writing, rewriting, and rewriting.  The current project
+plan has this book being completed in summer of 1996.  We will inform this
+mailing list when there are copies available.
+
+Sincerely,
+
+Ralph Hibbs
+---------------------------------------------------------------------------
+Ralph Hibbs
+Director of Marketing
+Project Technology, Inc.
+  2560 Ninth Street - Suite 214
+Berkeley, CA  94710
+
+Tel: (510) 845-1484
+fax: (510) 845-1075
+
+ralph@projtech.com
+---------------------------------------------------------------------------
+-
+
+
+From: "Ralph L. Hibbs" <ralph@projtech.com>
+Subject: Shlaer-Mellor Mailing List Update
+--------------------------------------------------------------------------
+
+Hello all,
+
+In just over two weeks this mailing list has grown to over 200 subscribers,
+and it is still growing!  The intense exchange of ideas and opinions on the
+Shlaer-Mellor Method is exactly what we had hoped for when we launched the
+list.  Thank you all for the overwhelming positive response to this forum,
+both in terms of participation and in terms of expanding the group to more
+users.
+
+Several questions have been posed to the group, requesting a PT response so
+I want to describe Project Technology's intended participation in this 
+forum.
+
+First, we read every message about the Method or tools.  Sally and Steve
+have both commented positively about this new source of practitioner
+experiences.  We view the discussions as important to help us understand
+those aspects of the Method and tools that are working well, as well as
+those that are less successful.
+
+Second, the technical staff at Project Technology subscribes directly to 
+the
+list.  They are encouraged to participate in discussions--especially when
+their teaching, consulting, and research experiences can provide insights.
+Please view their participation (including Sally and Steve's) as additions
+to the discussion rather than statements of PT policy.
+
+Third, we will use this list to provide early updates about the
+Shlaer-Mellor Method.  For example, OOA96 will be released in January.  I
+will provide information to this list about how to get copies of this 
+update
+as soon as they are easily available--before the public announcements.
+
+Fourth, this is YOUR forum.  If you have ideas for its use or promotion,
+please direct them to me at ralph@projech.com or directly to the mailing
+list.  I want this to be as useful as possible to you, the users of the
+Shlaer-Mellor Method.  This will happen with your feedback and support.
+
+Have a wonderful Holiday season.
+
+Best Regards,
+
+Ralph Hibbs
+---------------------------------------------------------------------------
+Ralph Hibbs
+Director of Marketing
+Project Technology, Inc.
+  2560 Ninth Street - Suite 214
+Berkeley, CA  94710
+
+Tel: (510) 845-1484
+fax: (510) 845-1075
+
+ralph@projtech.com
+---------------------------------------------------------------------------
+-
+
+
+From: farmerm@lfs.loral.com
+Subject: Effort estimation
+--------------------------------------------------------------------------
+
+From: Michael D. Farmer
+      DSGS Systems Engineering
+Subject: Effort estimation
+We're just starting a project and at bit of a lose as to how to estimate
+the effort.  Wondering if anyone has ideas or experience in costing a
+project using the Shlaer/Mellor method?
+Thanks
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Mike Farmer
+Loral North - Colorado Springs, CO   (719)593-5298
+Internet FARMERM@lfs.loral.COM
+
+From: "Monroe, Jon                 DA" 
+Subject: FW: Effort estimation
+--------------------------------------------------------------------------
+
+
+Michael D. Farmer writes:
+> We're just starting a project and at bit of a lose as to how
+> to estimate the effort.  Wondering if anyone has ideas or
+> experience in costing a project using the Shlaer/Mellor method?
+
+We've been attempting to adapt Cocomo to use objects.  For those
+of you who aren't familiar with Cocomo, it's a poor man's
+software estimation technique.  It was developed by Barry Boehm,
+and is fully documented in his book, "Software Engineering
+Economics" (Prentice Hall, 1981  ISBN 0-13-822122-7).  The Cocomo
+model takes a size estimate (in lines of code) and converts it to
+effort (in staff-months) and schedule length (in months).  It
+uses an exponential curve that was empirically derived from data
+collected from 60+ projects at TRW in the late 1970's.
+
+Our approach has been to perform an initial object blitz, and
+convert the number of identified objects into an estimated size
+in lines of code.  The basis for the conversion is the average
+number of lines of code measured per object for a previous
+project using a similar architecture and translation scheme.
+We also assume that the ratio of passive-to-active objects in
+the previous project will be roughly the same as the project
+being estimated.
+
+The results are generally in the ballpark, but at this stage I
+would not put too much trust in them.  It will probably take us
+many iterations and possibly years to gather enough historical
+data to properly calibrate the model.  It would be nice if there
+was some repository of data collected from projects using OOA.
+
+I've heard that a few years ago PT asked 50 clients if they
+would provide some project measurements, so that PT would have
+some historical data to help clients better estimate project
+schedules, etc.  Supposedly, they received 50 replies saying,
+"We can't give you our measurements, but we'd love to see the
+results of what other companies provide you."  Companies tend
+to protect metrics data as company assets.  While there is some
+merit to this, it is obviously short sighted.
+
+Perhaps the time is right for PT to try again.  I suggest they
+select some effort estimation technique (Cocomo or other), and
+define a few metrics to collect in order to calibrate the method.
+They could then retain an accounting firm, which would serve as
+the collection point for each company's measurements.  The
+accounting firm would be responsible for keeping all data
+anonymous and reporting the sanitized results back to PT.
+
+PT could then provide projects with an estimation technique and
+historical data.  Realizing that nothing worthwhile comes from
+PT for free (with the exception of this forum), they could charge
+clients who wish to have this data.  This, of course, assumes
+that the collected data is statistically meaningful.  They could
+also provide the data as part of one of their "Project Jumpstart"
+packages, and get clients to agree to reporting their future
+measurements in exchange for receiving the data from other clients
+up front.
+
+Jon Monroe
+
+This post does not represent the official position, or statement by,
+Abbott Laboratories.  Views expressed are those of the writer only.
+
+From: Sanjiv Gossain <sgoss@ctp.com>
+Subject: Re: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+At 11:37 18/12/95 cst, you wrote:
+
+>Rational uses what they call "Round-Trip Engineering" to support 100% code
+>generation from Booch models. It basically works like this:
+>  1. Model
+>  2. Generate headers and source frames
+>  3. Add in the "guts" of the source frames
+>  4. Reverse engineer back into models, from which you can re-generate 
+your
+>     code without affecting the code you hand-crafted
+>The big issue is can we effectively use Rational Rose to keep our models 
+and
+>code synched? If we can, we have 100% code maintenance from within our
+>Architecture design models.
+
+Sounds like a nice idea, but isn't the crux of the matter with the
+source of the code (excuse the pun). If one used a CASE tool
+that generated *all* of the code from the models based upon some
+architecture, then you would have the ultimate in traceability.
+
+No need to re-engineer.
+
+Change the models. Regenerate according to some rules (architecture)
+and then you have complete traceability.
+
+Do such tools exist?
+
+-sg
+_______________________________________________________
+Sanjiv Gossain  <sgoss@ctp.com>
+Cambridge Technology Partners  <http://www.ctp.com>
+Eton House, 18-24 Paradise Road, Richmond, TW9 1SE, UK
+Tel: +44.181.334.2767 /  Fax: +44.181.334.2701
+304 Vassar Street, Cambridge, MA 02139, USA
+Tel: +1.617.374.8667 / Fax: +1.617.374.8300
+
+
+
+From: "Vock, Mike                  DA" 
+Subject: Re: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+>From Sanjiv Gossain  <sgoss@ctp.com>
+> Change the models. Regenerate according to some rules (architecture)
+> and then you have complete traceability.
+>
+> Do such tools exist?
+
+My assumption is that this is not a rhetorical question. So, yes there are
+tools which support this, all using Shlaer-Mellor/OOA (e.g. BridgePoint 
+from
+PT, Objectbench from SES, maybe Cadre's ObjectTeam, and probably others).
+
+For our application, we have 100% code translation from our OOAed domains 
+and
+therefore have automatic trace support.
+
+Because of the reasons I stated in my previous postings, we are not using
+Shlaer-Mellor/OOA to develop our Architecture. Hence, we are trying to get 
+to 
+this same level of support through other means. Rational Rose is as close 
+as
+we could get.
+
+Mike Vock
+Abbott Labs
+
+
+
+From: farmerm@lfs.loral.com
+Subject: FW: Effort estimation
+--------------------------------------------------------------------------
+
+*** Reply to note of 12/18/95 21:41
+From: Michael D. Farmer
+      DSGS Systems Engineering
+Subject: FW: Effort estimation
+Jon
+Thanks for the reply.
+I've been toying with the idea of using COCOMO in much the same manner
+you described.  I've also thought about using Function Point, but don't
+really have any good ideas.
+
+Thanks again
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Mike Farmer
+Loral North - Colorado Springs, CO   (719)593-5298
+Internet FARMERM@lfs.loral.COM
+
+From: kbgibson@lfs.loral.com
+Subject: Software Reuse Within SM
+--------------------------------------------------------------------------
+
+I'm looking for various people's experience in reusing large parts of 
+existing
+software in a new project - the reuse is not OOA developed - but can be
+considered a monolithic executable or in some cases, source code.
+I am currently working on a "legacy interface" domain that would allow a 
+single
+bridge process in a client domain to map to multiple function calls across 
+many
+COTS products, the result of those multiple calls being what is needed by 
+the
+client. These seems to fit the "library of existing functions" paradigm 
+nicely,
+but if the COTS does not use this paradigm, what are some approachs to 
+handle
+these other cases?  For instance, if one has a satellite telemetry 
+processor
+that already exists and it provides data asynchronously whenever it is
+available  - what is the right way to use this reuse and model in SM the
+processing that is done after the data is available? Is it just showing an
+object representing the output of the reuse piece and modeling from there? 
+What
+would the bridge look like between this object and the reuse product?
+Any ideas/suggestions/experience would be appreciated.
+
+Kevin Gibson
+Loral Federal Systems - Boulder, CO.
+
+
+From: nick@ultratech.com (Nick Dodge)
+Subject: Re: Architecture Developments Tools
+--------------------------------------------------------------------------
+
+OODLE diagrams are great for trying to understand a design created
+by someone else. I have yet to find a tool that easily creates them.
+The best ideas I have seen so far are similar to what Mike Vock
+mentioned i.e. a drawing tool with templates. If your architectural
+rules are well defined, it should be possible to generate OODLE diagrams.
+Is anybody doing this?
+
+
+
+Nick Dodge
+Consultant
+Orangutan Software & Systems
+(209)878-3169
+
+From: Andrew Mangogna <andrewm@slip.net>
+Subject: Build Procedures, Source Control, and Configuration Management
+--------------------------------------------------------------------------
+
+I have been following the discussions here about translating models into
+functional systems and I am now very curious about how people have
+solved the sometimes very difficult and related problems of build
+procedures, source control and configuration management.
+
+I will readily admit to no direct experience in automatic model
+translation or with Bridgepoint (although I have burned up many large
+pieces of paper and more packages of post-it notes than I care to
+admit), so I hope that some of you with that experience will contribute
+your insight into how you have or are solving the truly "industrial"
+issues of readying a system for delivery.  Since automatic translation
+of the models now appears possible, the models have now become source
+code.  That gives the models a more special significance than they
+might have had in the past.
+
+In the interest of full disclosure and to start the discussion I will
+state some of my prejudices and preferences in this area.  First with
+respect to building a system, I believe all deliverables must be able to
+be build from ultimate source by someone who knows nothing about the
+organization of the product files (a technician, lets say, if you want
+to be concrete).  I usually insist that mean a build procedure no more
+complex than logging in, changing to a directory, and typing a single
+command.
+
+Second, all ultimate source code must be controlled in such a manner as
+to be able to review the history of its development and to compute the
+meaningful differences between any two revision points.
+
+And finally, the set of entities that constitutes the delivered system
+must be known and cataloged.  Any delivered system must be able to be
+reconstructed from ultimate source down to the last bit at any
+reasonable time after it has been delivered.  Also, some provisions must
+be available to generate fixes to delivered systems that are controlled
+and specific and do not necessarily involve incorporating all of the
+latest development into a patch release.
+
+Solutions for all of these issues have been worked out over the years
+for systems that are built from a collection of ASCII files that are
+compiled in a conventional manner.  However I am very curious about what
+people are doing with a set of models that I presume are not
+conventional.
+
+_______________________________________________________________________
+
+Andrew Mangogna
+Staff Software Engineer
+AMPEX Data Systems
+Redwood City, CA
+
+Work Email:  andrewm@ampex.com         Home Email:  andrewm@slip.net
+Work Phone:  (415) 367-2213            Home Phone:  (415) 863-3601
+
+From: "Vock, Mike                  DA" 
+Subject: RE:Build Procedures, Source Control, and
+--------------------------------------------------------------------------
+
+Andrew Mangogna asked about configuration management (CM) of models and 
+code.
+
+Here is our basic process on this project:
+1. Do OOA modeling using SES/Objectbench, which has built-in model
+   versioning.
+2. Simulate/test OOA models within CASE tool - iterate to correct errors or
+   make modifications (this is where versioning in the tool is used).
+3. Translate to code and run in-house developed make-make utility which
+   parses over our generated directories and code files to create a 
+complete
+   makefile.
+4. Build the project and test/integrate on target platform.
+5. When issues arise from testing, we modify the models (we will never 
+change
+   code, except for the Architecture) and re-translate, re-make-make, and
+   re-build.
+6. Run regression suites and complete testing.
+7. Official lock-down of software version with CM tool (PVCS). This 
+includes:
+   - Current version of the OOA models in CASE tool database (single
+     ObjectStore (OODBMS) database file).
+   - All source and headers, including Architecture.
+   - Makefile(s).
+   - Project executable(s).
+   - All documentation associated with the version.
+
+When we start a new version, we use the previous version as the baseline.
+
+We will always keep the _entire_ set of files which make a version complete
+under CM control. If we decide to "patch" a previous release, we can "get"
+the version of the CASE tool database we wish to patch from CM, load it 
+into
+the CASE tool, make modifications, re-translate...
+
+We are still working out the details to automate the entire
+translate-build-lockdown process completely. We automatically translate 
+100%
+of our OOAed models and we automatically create a project makefile to build
+the project, but we do not have the "typing a single command" procedure in
+place yet.
+
+I hope this provides you with some meaningful insights.
+
+Mike Vock
+Abbott Labs
+vockm@ema.abbott.com
+
+
+
+
+
+
+
+From: "Vock, Mike                  DA" 
+Subject: Software Reuse Within SM
+--------------------------------------------------------------------------
+
+Kevin Gibson asked about code reuse with SM.
+
+I am going to relate how we have handled realized domains to-date. 
+Hopefully
+at least one nugget falls out for you.
+
+On our project, we have several realized domains to deal with. They
+currently fall into two basic categories: API-like interface and process
+controlled by task (as in multitasking).
+
+The API-like interface is pretty simple, because we are planning to do just
+a process-to-process mapping through the bridge. FYI - we have a math 
+library
+we developed on a previous project that provided the same core set of
+functionality we needed for the new project.
+
+The process controlled by task (let's call it PCT) is a little trickier. 
+Our
+current use of these domain's services are asynchronous with callbacks
+required. It basically works like this:
+
+1. When a PCT service is needed in the OOA, call a bridge function to
+   initiate the PCT service. The OOA caller provides a good and a bad
+   callback event.
+2. The bridge function is mapped into a provided service process which
+   initiates asynchronous action by the PCT.
+3. The service process creates a task which shall wait for the PCT to
+   complete and then returns control to the OOA caller.
+4. When the action completes, the waiting task calls a response service of 
+the
+   OOAed domain which maps the status of the action to a good or bad event
+   being generated.
+
+To hopefully better illustrate these four steps:
+
+*********************************************
+* Action language in a state within the OOA *
+*********************************************
+// Do some stuff and then...
+BRIDGE_PCT_doSomeService(goodEvent, badEvent);
+
+***************************************************************************
+* Bridge Code (but not complete) - sorry not a pane of glass in this case *
+***************************************************************************
+// Bridge classes for OOAed Domain interface to Realized Domain
+class APP_rq  // required services    class APP_pv  // provided services
+{                                     {
+   static doSomeService(...);            static serviceComplete(...);
+};                                       static rememberEvents(good, bad);
+                                      };
+APP_rq::doSomeSerice(...)             APP_pv::serviceComplete(status)
+{                                     {
+    APP_pv::rememberEvents(...);         if (status == PASSED)
+    PCT_pv::doAsyncService(...);             Generate goodEvent;
+}                                        else
+                                             Generate badEvent;
+                                      }
+
+// Bridge classes for Realized Domain interface to other Domain
+class PCT_pv  // provided services    class PCT_rq  // required services
+{                                     {
+    static doAsyncService(...);           static asyncServiceDone(status);
+};                                    };
+PCT_pv::doAsyncService(...)           PCT_rq::asyncServiceDone(status)
+{                                     {
+    // Initiate asynchronous action       APP_pv::serviceComplete(status);
+    //    managed by PCT.             }
+    // Fork
+    //    waitForActionToComplete()
+    //    to wait for PCT to complete
+    //    the action.
+}
+
+// The waiting task
+waitForActionToComplete()
+{
+    // Wait for action to complete.
+    status = waitForPCT_Action();
+
+    // Respond with status when received.
+    PCT_rq::asyncServiceDone(status);
+
+    // Kill the thread.
+}
+
+The idea of the provided and required service classes came from an article 
+in
+Object Magazine (?) sometime in 1995. Sorry I couldn't find the article.
+
+We're not real proud of our approach, but it worked out OK.
+
+Whew! Now I'm tired!
+
+Mike Vock
+Abbott Labs
+vockm@ema.abbott.com
+
+
+From: "Todd Cooper" <Realsoft@msn.com>
+Subject: Build Procedures, Source Control...
+--------------------------------------------------------------------------
+
+Andrew Manogona (	AM) asked about configuration management (CM) of 
+models and
+code.
+
+Mike Vock (MV) responded with a description of the process used at Abbott 
+Labs
+for managing the versioning and CM of all related OOA/RD work products
+(including incidental documents such as test reports).
+
+Question #1:  The 'Abbott' process (the name used here for ease of 
+reference
+only) capably addresses the Repeatability issue (CMM Level 2), namely being
+able to recreate a version of software and correlate it to all relevant
+documentation.  Though MV didn't mention it, there is a PVCS Configuration
+Builder program also which can be used in conjunction with the Version 
+Manager
+to create specific builds from checked in source code files.  The real 
+issue
+which I felt was not totally addressed was AM's desire to "compute the
+meaningful differences between any two revision points", including model
+revisions:  How is this supported with current tooling?
+
+As far as I know [which is arguably not much ;-) ], though SES/Objectbench 
+and
+BridgePoint provide some level of model versioning, it is done at a file 
+level
+and does not allow the analyst to graphically compare two versions of a 
+model
+set and to review the associated 'change' notes.  I do believe CADRE 
+provides
+some level of capability here, as well as Rational/ROSE, though I have 
+never
+really tested this feature of either tool set.  When you consider 
+'maintaining
+the models, not the code', you have to look at not only being able to 
+restore
+a previous version of the model, but also to intelligently determine what
+changed, why it changed, correlate that with resolved 'software anomalies',
+etc.
+
+As AM implied (I think), though these problems have been solved to one 
+extent
+or another in traditional software development scenarios, when 
+model-centric
+development is applied replete with 100% code generation:  Has the CASE
+tooling caught up?  I think the answer is no, though I would love to be
+convinced otherwise.
+
+Question #2:  I may be a bit behind the times, however, the last I knew,
+SES/Objectbench used C or C++ for its action specifications (i.e., the 
+analyst
+uses a specific language in the OOA models).  When MV states in item (3) 
+that
+they "translate to code", I feel it is a bit misleading in that the analyst
+has already done a certain amount of that translation in specifying the 
+state
+actions...is the really the case or has SES come out with their own 
+abstract
+action language?
+
+The reason why this is important to me is that in multi-processor, embedded
+applications which include communications channels, a number of modeled
+objects need to be instantiated on two or more processors (esp. the case 
+with
+comm. objects operating on the same level of the ISO 7-layer salad).  We 
+have
+found that many times one processor (for example, a 80C188EB) will support
+C++, whereas a satellite processor, such as an 80196 only supports C or PLM
+(hey, Forth is still out there, too!):  When your action spec is in a 
+specific
+language, what about translating to the other environment?  Are you going 
+to
+normalize to the lowest common denominator?  I don't think so...
+
+I haven't a clue what CADRE's approach to the issue is these days...
+
+If my appraisals of the current state of Shlaer-Mellor CASE tooling is
+antiquated, I would appreciate being brought into the know...I mean, like 
+it's
+almost '96, ya know!  Dude, Happy New Year (what are you doin' reading this
+stuff during the Holidays anyway?!)
+
+Todd Cooper
+Realsoft
+(V)  619/484-8231
+(F)  619/538-6256
+(E)  t.cooper@ieee.org
+
+
+From: "Todd Cooper" <Realsoft@msn.com>
+Subject: Automated OODLE Diagrams (+ ADFDs)
+--------------------------------------------------------------------------
+
+Nick Dodge asked about automated generation of OODLE diagrams...
+
+The only 'real' OODLE support I have seen is in Visio Technical (ver 4) 
+where
+they have a stencil set with all the graphic elements necessary to create 
+the
+diagrams.  This is nowhere near a CASE tool, though, where you could 
+capture
+OO design info into a database (structured according to an appropriate
+meta-model schema), and then display the data in either format.
+
+Nick's question begs another, though:  Does anybody really use OODLE,
+especially in a 'production' environment?!  I have yet to see it used...
+
+A similar issue which has been on the table for quite a while is the 
+ability
+to perform the same capture/translation strategy for process models,
+specifying the logic using an action language and then automatically
+generating the ADFDs, or visa versa.  In fact, this capability should be 
+one
+of the driving factors in specifying the requirements for an action
+specification language!  Most practitioners are not real interested in 
+drawing
+ADFDs due to the time consuming nature of the task and the high level of
+volatility of these specifications;  however, most would also readily 
+admit to
+the fact that it is generally easier to 'visualize' processing via an ADFD
+specification vs. AL, and in some cases such as parallel processing, ADFDs
+surpass the expressiveness of AL specs.  This is *not* an either/or 
+question:
+both formats should be supported as alternative views of  the same model.
+
+Of course, there are a number of subtle problems implementing this type of
+tool;  however, it is definitely a tractable problem!  In both cases, 
+OODLE &
+ADFDs, I don't know of any tool which provides this level of
+automation...today!
+
+Todd Cooper
+Realsoft
+(V)  619/484-8231
+(F)  619/538-6256
+(E)  t.cooper@ieee.org
+
+
+From: "Vock, Mike                  DA" 
+Subject: RE: Software Reuse Within SM
+--------------------------------------------------------------------------
+
+In a previous posting, I weakly referenced an article on bridges:
+> The idea of the provided and required service classes came from an 
+article
+> in Object Magazine (?) sometime in 1995. Sorry I couldn't find the 
+article.
+
+I found the article in the June 1995 edition of Object Magazine starting on
+page 57. It is titled "Design and Construction of Shlaer-Mellor Bridges" by
+John A. Grosberg.
+
+Mike Vock
+Abbott Labs
+vockm@ema.abbott.com
+
+
+From: "Vock, Mike                  DA" 
+Subject: RE: Software Reuse Within SM
+--------------------------------------------------------------------------
+
+>From Kevin Gibson:
+> For instance, if one has a satellite telemetry processor that already
+> exists and it provides data asynchronously whenever it is available  - 
+what
+> is the right way to use this reuse and model in SM the processing that is
+> done after the data is available? Is it just showing an object 
+representing
+> the output of the reuse piece and modeling from there? What would the
+> bridge look like between this object and the reuse product?
+
+Upon further reflection...
+
+We also have a case kind of like what he has outlined above. Our
+application will receive asynchronous commands from external applications,
+perform some set of actions and respond back with status and/or data.
+
+We will provide Architecture mechanisms that support receiving these 
+commands
+from an external app and passing them on to the target domain. The "passing
+on" could take the form of instance creation, attribute writing, or event
+generation. No hard facts yet, still conceptualizing.
+
+In your case, maybe the Architecture buffers up this data from the COTS and
+generates an event to your object when fully received. Just a thought.
+
+Mike Vock
+Abbott Labs
+vockm@ema.abbott.com
+
+

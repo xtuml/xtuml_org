@@ -1,0 +1,46 @@
+---
+layout: "page"
+title: "Terms & Conditions"
+permalink: "/about/terms-conditions/"
+---
+
+**xtUML.org: Terms of Use**
+
+By viewing and/or participating in the xtUML.org Online Community, you understand and agree to comply with all terms and conditions below. If you do not accept these terms and conditions, do not use the online community functions of this website. If you fail to comply with any of these Terms of Use, your authorization to use this Online Community website automatically terminates. xtUML.org may change these terms and conditions at any time, without notice to you, and your use is subject to these changes. The most current version of the Terms of Use will be available at this location.
+
+**Disclaimer.** ALL MATERIALS, INFORMATION AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THIS WEBSITE ARE PROVIDED “AS IS” AND “AS AVAILABLE” FOR YOUR USE. XTUML.ORG DISCLAIMS ALL WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. XTUML.ORG DOES NOT WARRANT THAT THE CONTENT OF THIS WEBSITE IS ACCURATE, RELIABLE OR CORRECT; THAT THIS WEBSITE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE CONTENT IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF THIS WEBSITE IS SOLELY AT YOUR RISK. BECAUSE SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OF CERTAIN WARRANTIES, THESE EXCLUSIONS MAY NOT APPLY TO YOU.
+
+**Limitation of Liability.** XTUML.ORG AND ITS SUPPLIERS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES THAT RESULT FROM THE USE OF, OR INABILITY TO USE, THIS WEBSITE. THIS LIMITATION APPLIES WHETHER THE ALLEGED LIABILITY IS BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY OR ANY OTHER BASIS, EVEN IF EDX SOLUTIONS ALLIANCE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN JURISDICTIONS THAT DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, LIABILITY SHALL BE LIMITED TO THE EXTENT PERMITTED BY LAW.
+
+**Purpose.** The purpose of this Online Community website is to provide an online environment that is accessible by xtUML.org participants and other interested professionals where community members can ask questions among themselves about design or development issues they are encountering, offer their perspective on important and emerging industry issues, and share their expertise with peers.
+
+**What you post is your responsibility.** Any information or material contributed to this Online Community that is considered confidential or proprietary (“Confidential Information”) should be treated in accordance with the terms of the applicable governing agreement between xtUML.org and your employer that sets forth specific terms for the exchange of Confidential Information. Exercise caution when disclosing information. You should not post your or your employer’s Confidential Information except in accordance with those specific terms for the exchange of Confidential Information. Information posted by you is your responsibility and consequences of such posting remain entirely yours. xtUML.org has no obligations or liability with respect to the information contained in these postings, whether or not arising under the laws of copyright, libel, privacy, obscenity or otherwise.  IF YOU ADVERTISE OR OFFER TO SELL OR BUY ANY GOODS OR SERVICES FOR ANY BUSINESS PURPOSE WITHIN THE SPECIFIED MARKETPLACE AREA, YOU AGREE TO INDEMNIFY AND HOLD HARMLESS XTUML.ORG AND ITS LICENSORS FROM ANY CLAIMS, LOSS, COST, DAMAGE, EXPENSE OR LIABILITY, INCLUDING ATTORNEYS’ FEES, ARISING OUT OF OR IN CONNECTION WITH SUCH POSTS.
+
+**Eligibility.** By using this website you represent and warrant that you are over the age of 18.  In addition, by using this website you represent and warrant that you agree to all the terms and conditions within the Terms of Use.
+
+**Username and Password.** Your username and password is your responsibility and you agree to not allow any other person to use your username and/or password for login to this Online Community website under any circumstances. xtUML.org assumes no liability related to the theft, misappropriation, or disclosure of your username or password. You agree to immediately notify xtUML.org if you become aware or otherwise believe that your username and/or password have been compromised.
+
+**Forum Use.** By using the forums contained on this website, you agree you will not:
+
+1\. Upload files that contain software or other material protected by intellectual property laws (or protected by rights of privacy or rights of publicity) unless you own or control the rights thereto or have received all necessary consents.
+2. Upload files that contain viruses, worms, Trojan horses, corrupted files, or other forms of harmful computer code.
+3. Advertise or offer to sell or buy any goods or services for any business purpose, except within the specified Marketplace area.
+4. Falsify or delete any author attributions, legal or other proper notices or proprietary designations or labels of the origin or source of software or other material contained in a file that is uploaded.
+5. Attempt to mislead a viewer to believe that you are another person or entity.
+6. Disclose the results of, or information pertaining to, any benchmark.
+7. Unless acting in your role as moderator, restrict or inhibit any other user from transmitting or submitting posts.
+8. Harvest or otherwise collect information about others, including e-mail addresses.
+9. Post content that defames, abuses, harasses, stalks, threatens or otherwise violates the legal rights of others, including the right to privacy or publicity.
+10. Publish, post, distribute or disseminate any confidential, defamatory, infringing, obscene, indecent, false, or inaccurate information.
+11. Publish, post, distribute or disseminate profanity, or include profane or indecent language in the text of any posting.
+12. Publish, post, distribute or disseminate any illegal material.
+13. Disrupt the ordinary operation of this website.
+14. Use the website for anything other than its intended purposes.
+
+**Links to Websites.** Within the Online Community there may be links to websites outside xtUML.org. These websites are offered for convenience and information only. xtUML.org is not responsible for any of the websites or their content. Without limiting the generality of the foregoing, xtUML.org does not take responsibility for any inaccuracies expressed in the linked websites, including authenticity, or any viruses or other illicit code received in accessing the linked websites. The presence of a linked website within the online communities shall not be construed as an endorsement of that website, or the products or services described therein.
+
+**Content Removal.** The xtUML.org Online Community reserves the right for any reason to remove without notice any contents of the forums received from users, and reserves the right to deny any user access to this website or any portion thereof without notice.
+
+**Use of Content.** By participating in this Online Community, you agree that any posting of ideas, concepts, know-how, techniques, or any other material contributed to this Online Community (your “Contribution”) is done by you voluntarily. You represent that you have the full right and authority with regards to any Contribution made by you; that the Contribution does not infringe the rights of others or contain any misappropriated material. Unless otherwise set forth in a separate written agreement, you (i) grant to xtUML.org a perpetual, irrevocable, non-exclusive, worldwide, no-charge, royalty-free, unrestricted license to exercise all rights (including, without limitation. any rights in patents and copyrights) associated with your Contribution, and (ii) further agree that xtUML.org has the rights to use your Contribution. You may use the information found on this website to troubleshoot software problems. However, the information may not be distributed, sold, offered for sale, or otherwise exploited.
+
+**Applicable Law.** All content and material posted by xtUML.org on this Online Community website are protected by copyrights, trademarks or other proprietary rights and laws. These Terms of Use shall be governed by and construed in accordance with the laws of the State of Indiana, excluding its conflicts of law rules. You expressly agree that the exclusive jurisdiction for any claim or action arising out of or relating to these Terms of Use or your use of this website shall be filed only in the state or federal courts located in Portland, Oregon, and you further agree and submit to the exercise of personal jurisdiction of such courts for the purpose of litigating any such claim or action. xtUML.org makes no representation that materials on this Online Community website are appropriate or available for use in locations outside the United States, and accessing them from territories where their contents are illegal is prohibited. Those who choose to access this website from outside the United States do so on their own initiative and are responsible for compliance with applicable local laws.

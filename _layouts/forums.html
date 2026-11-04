@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+  <p class="notice">This forum is a preserved archive. New posts are not accepted.</p>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+  {% assign forums = site.pages | where: "layout", "forum" | sort: "order" %}
+  <ul class="listing">
+    {% for forum in forums %}
+    <li>
+      <a href="{{ forum.url | relative_url }}">{{ forum.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>

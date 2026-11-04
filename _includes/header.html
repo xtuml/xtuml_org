@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      xtUML
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      {% assign here = page.url %}
+      <a href="{{ '/getting-started/' | relative_url }}" {% if here contains '/getting-started' %}aria-current="page"{% endif %}>Start</a>
+      <a href="{{ '/learn/' | relative_url }}" {% if here contains '/learn/' %}aria-current="page"{% endif %}>Learn</a>
+      <a href="{{ '/download/' | relative_url }}" {% if here contains '/download' %}aria-current="page"{% endif %}>Download</a>
+      <a href="{{ '/articles/' | relative_url }}" {% if here contains '/articles/' %}aria-current="page"{% endif %}>News</a>
+      <a href="{{ '/forums/' | relative_url }}" {% if here contains '/forums/' %}aria-current="page"{% endif %}>Forum</a>
+      <a href="{{ '/about/' | relative_url }}" {% if here contains '/about/' %}aria-current="page"{% endif %}>About</a>
+    </nav>
+  </div>
+</header>

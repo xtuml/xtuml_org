@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>{{ site.title | xml_escape }}</title>
+  <link>{{ site.url }}{{ '/' | relative_url }}</link>
+  <description>{{ site.description | xml_escape }}</description>
+  {% assign notes = site.pages | where: "layout", "article" | sort: "date" | reverse %}
+  {% for note in notes limit: 20 %}
+  <item>
+    <title>{{ note.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ note.url | relative_url }}</link>
+    <guid>{{ site.url }}{{ note.url | relative_url }}</guid>
+    {% if note.date %}<pubDate>{{ note.date | date_to_rfc822 }}</pubDate>{% endif %}
+    <description>{{ note.content | strip_html | normalize_whitespace | truncate: 280 | xml_escape }}</description>
+  </item>
+  {% endfor %}
+</channel>
+</rss>

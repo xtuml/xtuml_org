@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article>
+  <h1>News</h1>
+  <p>Announcements and notes from the xtUML project. Add a new one by putting a Markdown file in the <code>articles</code> folder.</p>
+  {{ content }}
+  {% assign notes = site.pages | where: "layout", "article" | sort: "date" | reverse %}
+  <ul class="listing">
+    {% for note in notes %}
+    <li>
+      {% if note.date %}<time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: "%Y-%m-%d" }}</time>{% endif %}
+      <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
