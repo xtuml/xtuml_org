@@ -1,0 +1,98 @@
+= Migrate xtuml.org to Jekyll with GitHub Pages
+
+xtUML Project Analysis Note
+
+== 1 Abstract
+
+This note documents work to migrate xtuml.org from WordPress to Jekyll
+with GitHub Pages.
+
+== 2 Introduction and Background
+
+xtuml.org has a long history and therefore has accumulated a lot of
+material.  It is a somewhat large website.
+
+The primary xtuml.org site is hosted on WordPress.
+
+xtuml.org has been scraped using wget into a git repository hosted on
+GitHub (xtuml/xtumlorg).  This repository is cloned locally on my MacOS
+laptop.  This site serves Pages through xtuml.github.io/xtumlorg .
+
+Both the primary xtuml.org site and the scraped site can be used as
+sources for the migration.
+
+The target of the migration is a git repository, xtuml/xtuml_org hosted on
+GitHub and cloned locally to my MacOS laptop.
+
+== 3 Requirements
+
+=== 3.1 Clean, Utilitarian Look and Feel
+
+Achieve a clean look with an emphasis on ease of use.  The target user is
+an engineer or computer scientist.  Using a Jekyll theme would be
+permissible but is not a requirement.
+
+=== 3.3 Simplified Maintenance
+
+It is a requirement that a new article (blog post) be possible by simply
+adding a file to an articles folder (and rebuilding the site using GitHub
+Actions).
+
+=== 3.4 Jekyll and GitHub Pages
+
+Use Jekyll and GitHub Pages unless a better recommendation is forthcoming.
+
+Follow Jekyll and GitHub Pages best practices whenever feasible.
+
+=== 3.4 Eliminate References to the Heritage WordPress Site
+
+Migrate images and documents from the WordPress (or scraped) site.
+Minimize references to the heritage site.  The heritage site will be
+removed after the migration is complete.
+
+=== 3.5 Eliminate WordPress Infrastructure
+
+The heritage site depends upon a number of WordPress plugins and other
+infrastructure.  Eliminate these dependencies.  When a dependency is
+needed for functionality, propose alternatives including simply
+eliminating the functionality.
+
+=== 3.6 Forum
+
+The heritage site supports discussion forum.
+
+* The content in these forum posts is valuable.
+* The ability to allow others to post will not supported on the new site.
+* Propose a solution for preserving this content in a meaningful way.
+
+== 4 Procedure
+
+=== 4.1 Analysis of Existing Artifacts
+
+* Read this note.
+* Inspect the heritage site.
+* Inspect the scrape site (xtuml/xtumlorg and local clone).
+* Evaluate the target repository (xtuml/xtuml_org and local clone).
+
+=== 4.2 Recommendations
+
+* Recommend layout, color scheme, look and feel.
+* Recommend steps to meet requirements.
+
+=== 4.3 Clean Start
+
+Initialize the xtuml/xtuml_org git repository with a base functional
+Jekyll site.
+
+=== 4.4 Incremental Update
+
+As work proceeds avoid "breaking" the site such that it does not build
+through GitHub Actions.  Commit coherent sets of changes that can be
+reveiwed as source and through the published GitHub Pages web access.
+
+
+---
+
+This work is licensed under the Creative Commons CC0 License
+
+---
