@@ -20,7 +20,7 @@ For an older build, write to support@onefact.net.
 
 ## Release builds
 
-Release builds started with BridgePoint v4.2 in November 2014. Highlights for the current release are in the [release notes on GitHub](https://github.com/xtuml/bridgepoint/blob/master/src/org.xtuml.bp.doc/ReleaseNotes/ReleaseNotes.md).
+Release builds started with BridgePoint v4.2 in November 2014. Highlights for the current release are in the [release notes on GitHub](https://github.com/xtuml/bridgepoint/blob/master/src/org.xtuml.bp.doc/ReleaseNotes/ReleaseNotes.adoc).
 
 ## Building BridgePoint
 

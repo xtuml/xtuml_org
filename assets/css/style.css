@@ -126,6 +126,41 @@ main th, main td {
   margin-top: 0;
 }
 
+.home-intro {
+  background: var(--paper);
+  margin: -2rem 0 0.4rem;
+  padding: 1.5rem 0 1.15rem;
+  box-shadow: 0 0 0 100vmax var(--paper);
+  clip-path: inset(0 -100vmax);
+}
+.home-intro::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin-top: 1.15rem;
+  background: var(--indigo);
+}
+.home-lead {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.home-lead h1 { margin-top: 0; }
+.home-lead p:last-child { margin-bottom: 0; }
+.home-mark {
+  width: 13.75rem;
+  height: auto;
+  flex: none;
+}
+@media (max-width: 40rem) {
+  .home-lead {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .home-mark { width: min(13.75rem, 70%); }
+}
+
 .doors { list-style: none; padding: 0; margin: 1.5rem 0 0; }
 .doors li {
   border-top: 1px solid var(--line);

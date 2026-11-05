@@ -15,6 +15,6 @@ redirect_from:
   - /homepage/
 ---
 
-xtUML is a UML profile for executable, translatable models. BridgePoint is the open source tool that edits, executes, and translates those models.
+Shlaer-Mellor xtUML is a UML profile for executable, translatable models. BridgePoint is the open source tool that edits, executes, and translates those models.
 
 This site is the project home: the method, the documents, the downloads, and a preserved copy of the community forum.
