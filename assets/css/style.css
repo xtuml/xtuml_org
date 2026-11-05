@@ -1,10 +1,10 @@
 :root {
-  --indigo: #47438e;
-  --teal: #068d84;
+  --indigo: #2a2d79;
+  --teal: #09716a;
   --text: #242424;
   --muted: #5d5d5d;
-  --line: #e4e2ee;
-  --paper: #f6f5fa;
+  --line: #e2e4ee;
+  --paper: #f5f6fa;
   --bg: #ffffff;
 }
 
@@ -65,15 +65,10 @@ main {
 }
 
 .mark {
-  width: 1.15rem;
-  height: 1.15rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
 }
-.mark i { display: block; background: #7dffc3; }
-.mark i:nth-child(2),
-.mark i:nth-child(3) { background: #9ff0e4; }
 
 .site-nav {
   display: flex;
@@ -167,3 +162,26 @@ main th, main td {
 }
 .site-footer .footer-inner { padding: 1.2rem 0 2rem; }
 .site-footer a { color: var(--indigo); }
+
+.video { margin: 1.4rem 0 0; }
+.video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #111;
+}
+.video figcaption { margin-top: 0.45rem; }
+
+.unit-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+.unit-nav .next { text-align: right; }
+
+.course-outline { padding-left: 1.2rem; }
+.course-outline li { margin: 0.2rem 0; }
