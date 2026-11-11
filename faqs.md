@@ -84,5 +84,5 @@ permalink: "/faqs/"
 
 ## xtUML Editor – Runtime Questions
 
-1.  **I’m having trouble installing or running xtUML Editor on Linux.  What is wrong?**
+1.  **I am having trouble installing or running xtUML Editor on Linux.  What is wrong?**
     Installing and running on Linux may require some additional system configuration.  There are existing [Forum discussions]({{ '/forums/xtuml-forum/' | relative_url }} "xtUML Forum") that may prove helpful.  If you are still having trouble after trying out those suggestions, create a new discussion which details your problem.
