@@ -1,7 +1,7 @@
 title: xtUML
 description: Open source executable and translatable UML modeling.
-url: https://xtuml.github.io
-baseurl: /xtuml_org
+url: https://xtuml.org
+baseurl: ""
 lang: en
 
 markdown: kramdown
