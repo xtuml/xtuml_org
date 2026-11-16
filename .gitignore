@@ -5,3 +5,4 @@ _site/
 vendor/
 tools/_cache/
 _data/onefact_articles.yml
+onefactinc/

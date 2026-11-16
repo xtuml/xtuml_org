@@ -20,11 +20,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout One Fact articles
+        uses: actions/checkout@v4
+        with:
+          repository: xtuml/onefactinc
+          path: onefactinc
+          sparse-checkout: _articles
+          sparse-checkout-cone-mode: true
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
+      - name: List One Fact articles
+        run: python3 tools/list_onefact_articles.py onefactinc
       - name: Build
         run: bundle exec jekyll build
       - name: Upload artifact
