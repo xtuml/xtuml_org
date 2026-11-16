@@ -34,3 +34,19 @@ The preview is served with the project base path `/xtuml_org`, matching `https:/
 - `assets/uploads/` — documents and images migrated off WordPress.
 
 `tools/import_site.py` rebuilt those pages from the WordPress REST API and the `xtumlorg` scrape. It is not part of the published site.
+
+## TODO
+
+- Remove `tools/import_site.py` and maybe other executable programs.
+- Clean up the DNS records.
+- Understand each record that remains.
+- Make it (in DNS records) so email is/can never using xtuml.org.
+* Enable DNSSEC.
+* Share (even duplicate) blog with onefact.net.
+* Fix forum.
+* Post napkin.
+* Post AI.
+* Transfer domain from GoDaddy to Cloudflare (also onefact.net and roxsoftware.com from Network Solutions).
+
+
+
