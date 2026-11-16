@@ -186,7 +186,7 @@ main th, main td {
   border-top: 1px solid var(--line);
   padding: 0.7rem 0;
 }
-.listing time, .listing .forum-name { color: var(--muted); font-size: 0.9rem; }
+.listing time, .listing .forum-name, .listing .source { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
 .listing a { text-decoration: none; font-weight: 600; }
 .listing a:hover { text-decoration: underline; }
 

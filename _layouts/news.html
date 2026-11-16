@@ -3,15 +3,43 @@ layout: default
 ---
 <article>
   <h1>News</h1>
-  <p>Announcements and notes from the xtUML project. Add a new one by putting a Markdown file in the <code>articles</code> folder.</p>
+  <p>Announcements and notes from the xtUML project, plus posts from the <a href="https://onefact.net/blog/">One Fact blog</a>. Add a new xtUML note by putting a Markdown file in the <code>articles</code> folder.</p>
   {{ content }}
-  {% assign notes = site.pages | where: "layout", "article" | sort: "date" | reverse %}
+  {% assign rows = "" | split: "|" %}
+  {% assign notes = site.pages | where: "layout", "article" %}
+  {% for note in notes %}
+    {% assign stamp = note.date | date: "%Y-%m-%d" %}
+    {% assign row = stamp | append: " %% " | append: note.url | append: " %% " | append: note.title %}
+    {% assign rows = rows | push: row %}
+  {% endfor %}
+  {% for note in site.data.onefact_articles.dated %}
+    {% assign stamp = note.date | date: "%Y-%m-%d" %}
+    {% assign row = stamp | append: " %% " | append: note.url | append: " %% " | append: note.title %}
+    {% assign rows = rows | push: row %}
+  {% endfor %}
+  {% assign rows = rows | sort | reverse %}
   <ul class="listing">
-    {% for note in notes %}
+    {% for row in rows %}
+    {% assign bits = row | split: " %% " %}
     <li>
-      {% if note.date %}<time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: "%Y-%m-%d" }}</time>{% endif %}
-      <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      <time datetime="{{ bits[0] }}">{{ bits[0] }}</time>
+      {% if bits[1] contains "://" %}
+      <a href="{{ bits[1] }}">{{ bits[2] }}</a> <span class="source">One Fact</span>
+      {% else %}
+      <a href="{{ bits[1] | relative_url }}">{{ bits[2] }}</a>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>
+  {% if site.data.onefact_articles.undated %}
+  <h2>One Fact archive</h2>
+  <p>Posts kept from the One Fact blog without a publication date.</p>
+  <ul class="listing">
+    {% for note in site.data.onefact_articles.undated %}
+    <li>
+      <a href="{{ note.url }}">{{ note.title }}</a> <span class="source">One Fact</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </article>

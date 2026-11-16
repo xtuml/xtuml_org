@@ -4,3 +4,4 @@ _site/
 .bundle/
 vendor/
 tools/_cache/
+_data/onefact_articles.yml
