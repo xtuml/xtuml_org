@@ -42,8 +42,6 @@ Inside xtUML On Air is a live monthly broadcast available to subscribers of the 
 
 It’s necessary to sign up for the [xtUML You Tube channel](http://www.youtube.com/xtuml) in order to access these live broadcasts.
 
-*As always, we love to hear from the users of the xtUML Editor.  We invite you to join in our* [*Forum discussions*]({{ '/forums/xtuml-forum/' | relative_url }}) *off xtUML.org, or feel free to send an email to the* [*xtUML.org administrator*](mailto:admin@xtuml-org.hustlefish-sites.com) *at any time.*
-
 *Best regards,*
 
 *Your xtUML.org Committee*
